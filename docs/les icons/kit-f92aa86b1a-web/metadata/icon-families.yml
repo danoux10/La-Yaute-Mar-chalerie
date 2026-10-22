@@ -1,0 +1,687 @@
+---
+address-card:
+  aliases:
+    names:
+      - contact-card
+      - vcard
+    unicodes:
+      composite:
+        - f2bc
+      secondary:
+        - 10f2bb
+  changes:
+    - 4.7.0
+    - 5.0.0
+    - 5.0.3
+    - 6.0.0-beta1
+    - 6.2.0
+    - 6.3.0
+    - 6.4.0
+    - 6.5.0
+    - 6.6.0
+    - 6.7.0
+    - 7.0.0
+    - 7.2.0
+    - 7.3.0
+    - 7.3.0
+  familyStylesByLicense:
+    free:
+      - family: classic
+        style: solid
+    pro:
+      - family: classic
+        style: solid
+  label: Address Card
+  search:
+    terms:
+      - address
+      - badge
+      - business card
+      - card
+      - contact
+      - contact card
+      - credentials
+      - employee
+      - id
+      - id card
+      - identification
+      - name card
+      - personal info
+      - profile
+      - profile card
+      - registration
+      - user
+  unicode: f2bb
+  voted: false
+arrow-right-long:
+  aliases:
+    names:
+      - long-arrow-right
+    unicodes:
+      secondary:
+        - 10f178
+  changes:
+    - 3.2.0
+    - 5.0.0
+    - 6.0.0-beta1
+    - 6.2.0
+    - 6.3.0
+    - 6.4.0
+    - 6.5.0
+    - 6.6.0
+    - 6.7.0
+    - 7.0.0
+  familyStylesByLicense:
+    free:
+      - family: classic
+        style: solid
+    pro:
+      - family: classic
+        style: solid
+  label: Arrow Right Long
+  search:
+    terms:
+      - arrow
+      - continue
+      - direction
+      - forward
+      - long arrow
+      - move
+      - navigation
+      - next
+      - proceed
+      - right
+  unicode: f178
+  voted: false
+camera:
+  aliases:
+    names:
+      - camera-alt
+    unicodes:
+      composite:
+        - f332
+      primary:
+        - f332
+      secondary:
+        - 10f030
+        - 10f332
+  changes:
+    - 1.0.0
+    - 5.0.0
+    - 6.0.0-beta1
+    - 6.0.0-beta2
+    - 6.2.0
+    - 6.3.0
+    - 6.4.0
+    - 6.5.0
+    - 6.6.0
+    - 6.7.0
+    - 7.0.0
+    - 7.1.0
+    - 7.2.0
+    - 7.3.0
+    - 7.3.0
+  familyStylesByLicense:
+    free:
+      - family: classic
+        style: solid
+    pro:
+      - family: classic
+        style: solid
+  label: Camera
+  search:
+    terms:
+      - camera
+      - camera icon
+      - capture
+      - film
+      - image
+      - lens
+      - photo
+      - photograph
+      - photography
+      - picture
+      - recording
+      - shutter
+      - snapshot
+      - video
+  unicode: f030
+  voted: false
+chart-simple:
+  changes:
+    - 6.0.0-beta3
+    - 6.1.0
+    - 6.2.0
+    - 6.3.0
+    - 6.4.0
+    - 6.5.0
+    - 6.6.0
+    - 6.7.0
+    - 7.0.0
+    - 7.1.0
+    - 7.2.0
+    - 7.3.0
+    - 7.3.0
+  familyStylesByLicense:
+    free:
+      - family: classic
+        style: solid
+    pro:
+      - family: classic
+        style: solid
+  label: Chart Simple
+  search:
+    terms:
+      - analytics
+      - bar
+      - chart
+      - column
+      - data
+      - graph
+      - infographic
+      - metrics
+      - performance
+      - progress
+      - report
+      - revenue
+      - statistics
+      - trend
+      - visualization
+  unicode: e473
+  voted: false
+coins:
+  aliases:
+    unicodes:
+      secondary:
+        - 10f51e
+  changes:
+    - 5.0.13
+    - 6.0.0-beta1
+    - 6.0.0-beta3
+    - 6.2.0
+    - 6.3.0
+    - 6.4.0
+    - 6.5.0
+    - 6.6.0
+    - 6.7.0
+    - 7.0.0
+  familyStylesByLicense:
+    free:
+      - family: classic
+        style: solid
+    pro:
+      - family: classic
+        style: solid
+  label: Coins
+  search:
+    terms:
+      - cash
+      - change
+      - coins
+      - currency
+      - dime
+      - finance
+      - gold
+      - money
+      - nickel
+      - payment
+      - penny
+      - premium
+      - quarter
+      - savings
+      - silver
+      - wealth
+  unicode: f51e
+  voted: true
+envelope:
+  aliases:
+    unicodes:
+      composite:
+        - 1f582
+        - '2709'
+        - f003
+      secondary:
+        - 10f0e0
+  changes:
+    - 2.0.0
+    - 5.0.0
+    - 5.10.1
+    - 5.10.2
+    - 6.0.0-beta1
+    - 6.1.0
+    - 6.2.0
+    - 6.2.1
+    - 6.3.0
+    - 6.4.0
+    - 6.5.0
+    - 6.6.0
+    - 6.7.0
+    - 7.0.0
+    - 7.1.0
+    - 7.2.0
+    - 7.3.0
+    - 7.3.0
+  familyStylesByLicense:
+    free:
+      - family: classic
+        style: solid
+    pro:
+      - family: classic
+        style: solid
+  label: Envelope
+  search:
+    terms:
+      - contact
+      - correspondence
+      - e-mail
+      - email
+      - envelope
+      - inbox
+      - letter
+      - mail
+      - message
+      - newsletter
+      - notification
+      - postal
+      - receive
+      - send
+      - support
+  unicode: f0e0
+  voted: false
+graduation-cap:
+  aliases:
+    names:
+      - mortar-board
+    unicodes:
+      composite:
+        - 1f393
+      secondary:
+        - 10f19d
+  changes:
+    - 4.1.0
+    - 5.0.0
+    - 5.2.0
+    - 5.10.1
+    - 6.0.0-beta1
+    - 6.2.0
+    - 6.3.0
+    - 6.4.0
+    - 6.5.0
+    - 6.6.0
+    - 6.7.0
+    - 7.0.0
+  familyStylesByLicense:
+    free:
+      - family: classic
+        style: solid
+    pro:
+      - family: classic
+        style: solid
+  label: Graduation Cap
+  search:
+    terms:
+      - academic
+      - cap
+      - celebration
+      - ceremony
+      - college
+      - commencement
+      - diploma
+      - education
+      - graduate
+      - graduation
+      - hat
+      - learning
+      - mortarboard
+      - school
+      - student
+  unicode: f19d
+  voted: false
+heart:
+  aliases:
+    unicodes:
+      composite:
+        - 1f499
+        - 1f49a
+        - 1f49b
+        - 1f49c
+        - 1f5a4
+        - 1f90d
+        - 1f90e
+        - 1f9e1
+        - '2665'
+        - '2764'
+        - f08a
+      secondary:
+        - 10f004
+  changes:
+    - 1.0.0
+    - 5.0.0
+    - 5.0.9
+    - 5.10.1
+    - 5.10.2
+    - 6.0.0-beta1
+    - 6.0.0
+    - 6.2.0
+    - 6.3.0
+    - 6.4.0
+    - 6.5.0
+    - 6.6.0
+    - 6.7.0
+    - 7.0.0
+    - 7.1.0
+    - 7.2.0
+    - 7.3.0
+    - 7.3.0
+  familyStylesByLicense:
+    free:
+      - family: classic
+        style: solid
+    pro:
+      - family: classic
+        style: solid
+  label: Heart
+  search:
+    terms:
+      - affection
+      - card
+      - emotion
+      - favorite
+      - heart
+      - heart suit
+      - like
+      - love
+      - passion
+      - playing card
+      - relationship
+      - romance
+      - symbol
+      - valentine
+      - wishlist
+  unicode: f004
+  voted: false
+house:
+  aliases:
+    names:
+      - home
+      - home-alt
+      - home-lg-alt
+    unicodes:
+      composite:
+        - 1f3e0
+        - f80a
+        - f80c
+      primary:
+        - f80a
+        - f80c
+      secondary:
+        - 10f015
+        - 10f80a
+        - 10f80c
+  changes:
+    - 1.0.0
+    - 5.0.0
+    - 5.7.0
+    - 6.0.0-beta1
+    - 6.0.0-beta2
+    - 6.0.0-beta3
+    - 6.1.0
+    - 6.2.0
+    - 6.3.0
+    - 6.4.0
+    - 6.5.0
+    - 6.6.0
+    - 6.7.0
+    - 7.0.0
+    - 7.1.0
+    - 7.2.0
+    - 7.3.0
+    - 7.3.0
+  familyStylesByLicense:
+    free:
+      - family: classic
+        style: solid
+    pro:
+      - family: classic
+        style: solid
+  label: House
+  search:
+    terms:
+      - abode
+      - building
+      - domicile
+      - dwelling
+      - home
+      - house
+      - living place
+      - main
+      - property
+      - real estate
+      - residence
+      - shelter
+  unicode: f015
+  voted: false
+instagram:
+  changes:
+    - 4.6.0
+    - 5.0.0
+    - 7.0.0
+  familyStylesByLicense:
+    free:
+      - family: classic
+        style: brands
+    pro:
+      - family: classic
+        style: brands
+  label: Instagram
+  search:
+    terms:
+      - IG
+      - Instagram
+      - app
+      - feed
+      - filter
+      - influencer
+      - photo sharing
+      - reels
+      - social media
+      - social network
+      - stories
+  unicode: f16d
+  voted: false
+location-dot:
+  aliases:
+    names:
+      - map-marker-alt
+    unicodes:
+      secondary:
+        - 10f3c5
+  changes:
+    - 5.0.0
+    - 6.0.0-beta1
+    - 6.0.0-beta3
+    - 6.2.0
+    - 6.3.0
+    - 6.4.0
+    - 6.5.0
+    - 6.6.0
+    - 6.7.0
+    - 7.0.0
+    - 7.1.0
+    - 7.2.0
+    - 7.3.0
+    - 7.3.0
+  familyStylesByLicense:
+    free:
+      - family: classic
+        style: solid
+    pro:
+      - family: classic
+        style: solid
+  label: Location Dot
+  search:
+    terms:
+      - address
+      - coordinates
+      - destination
+      - geotag
+      - gps
+      - location
+      - map
+      - map marker
+      - marker
+      - navigation
+      - pin
+      - place
+      - point of interest
+      - position
+      - route
+      - spot
+      - travel
+      - waypoint
+  unicode: f3c5
+  voted: false
+map-location-dot:
+  aliases:
+    names:
+      - map-marked-alt
+    unicodes:
+      secondary:
+        - 10f5a0
+  changes:
+    - 5.1.0
+    - 6.0.0-beta1
+    - 6.0.0-beta3
+    - 6.2.0
+    - 6.3.0
+    - 6.4.0
+    - 6.5.0
+    - 6.6.0
+    - 6.7.0
+    - 7.0.0
+  familyStylesByLicense:
+    free:
+      - family: classic
+        style: solid
+    pro:
+      - family: classic
+        style: solid
+  label: Map Location Dot
+  search:
+    terms:
+      - address
+      - coordinates
+      - destination
+      - drop pin
+      - find
+      - geolocation
+      - gps
+      - location
+      - map
+      - map marker
+      - marker
+      - navigation
+      - pin
+      - place
+      - point of interest
+      - position
+      - route
+      - spot
+      - travel
+      - waypoint
+  unicode: f5a0
+  voted: false
+phone:
+  aliases:
+    unicodes:
+      composite:
+        - 1f4de
+        - 1f57b
+      secondary:
+        - 10f095
+  changes:
+    - 2.0.0
+    - 5.0.0
+    - 5.10.1
+    - 5.10.2
+    - 6.0.0-beta1
+    - 6.2.0
+    - 6.3.0
+    - 6.4.0
+    - 6.5.0
+    - 6.6.0
+    - 6.7.0
+    - 7.0.0
+    - 7.1.0
+    - 7.2.0
+    - 7.3.0
+    - 7.3.0
+  familyStylesByLicense:
+    free:
+      - family: classic
+        style: solid
+    pro:
+      - family: classic
+        style: solid
+  label: Phone
+  search:
+    terms:
+      - call
+      - communication
+      - contact
+      - dial
+      - earphone
+      - handset
+      - landline
+      - mobile
+      - phone
+      - receiver
+      - support
+      - talk
+      - telephone
+      - voice
+  unicode: f095
+  voted: false
+user-tie:
+  aliases:
+    unicodes:
+      secondary:
+        - 10f508
+  changes:
+    - 5.0.11
+    - 6.0.0-beta1
+    - 6.0.0-beta2
+    - 6.2.0
+    - 6.3.0
+    - 6.4.0
+    - 6.5.0
+    - 6.6.0
+    - 6.7.0
+    - 7.0.0
+  familyStylesByLicense:
+    free:
+      - family: classic
+        style: solid
+    pro:
+      - family: classic
+        style: solid
+  label: User Tie
+  search:
+    terms:
+      - administrator
+      - avatar
+      - business
+      - clothing
+      - employee
+      - executive
+      - formal
+      - manager
+      - office
+      - person
+      - professional
+      - profile
+      - suit
+      - tie
+      - user
+  unicode: f508
+  voted: false

@@ -1,0 +1,132 @@
+---
+accessibility:
+  icons:
+    - address-card
+  label: Accessibility
+alphabet:
+  icons:
+    - address-card
+  label: Alphabet
+arrows:
+  icons:
+    - arrow-right-long
+  label: Arrows
+buildings:
+  icons:
+    - house
+  label: Buildings
+business:
+  icons:
+    - address-card
+    - chart-simple
+    - envelope
+    - phone
+  label: Business
+camping:
+  icons:
+    - map-location-dot
+  label: Camping
+charity:
+  icons:
+    - heart
+  label: Charity
+charts-diagrams:
+  icons:
+    - chart-simple
+  label: Charts + Diagrams
+clothing-fashion:
+  icons:
+    - graduation-cap
+    - user-tie
+  label: Clothing + Fashion
+communication:
+  icons:
+    - address-card
+    - envelope
+    - phone
+  label: Communication
+devices-hardware:
+  icons:
+    - camera
+  label: Devices + Hardware
+editing:
+  icons:
+    - chart-simple
+  label: Editing
+education:
+  icons:
+    - graduation-cap
+  label: Education
+gaming:
+  icons:
+    - heart
+  label: Gaming
+holidays:
+  icons:
+    - heart
+  label: Holidays
+humanitarian:
+  icons:
+    - envelope
+  label: Humanitarian
+logistics:
+  icons:
+    - chart-simple
+  label: Logistics
+maps:
+  icons:
+    - graduation-cap
+    - heart
+    - house
+    - location-dot
+    - phone
+  label: Maps
+marketing:
+  icons:
+    - chart-simple
+  label: Marketing
+medical-health:
+  icons:
+    - heart
+  label: Medical + Health
+money:
+  icons:
+    - coins
+  label: Money
+photos-images:
+  icons:
+    - camera
+  label: Photos + Images
+shapes:
+  icons:
+    - heart
+  label: Shapes
+shopping:
+  icons:
+    - camera
+    - heart
+  label: Shopping
+social:
+  icons:
+    - camera
+    - envelope
+    - heart
+    - location-dot
+  label: Social
+sports-fitness:
+  icons:
+    - heart
+  label: Sports + Fitness
+travel-hotel:
+  icons:
+    - map-location-dot
+  label: Travel + Hotel
+users-people:
+  icons:
+    - address-card
+    - user-tie
+  label: Users + People
+writing:
+  icons:
+    - envelope
+  label: Writing

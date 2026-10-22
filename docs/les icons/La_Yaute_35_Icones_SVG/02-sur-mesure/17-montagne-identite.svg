@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Montagne La Yaute stylisée">
+  <title>Montagne La Yaute stylisée</title>
+  
+  <g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M6 76 33 43 42 53 62 13 90 76" stroke-width="7.5"/>
+    <path d="M20 76 39 55" stroke-width="7.5"/>
+    <path d="M58 28 63 13 75 37" stroke-width="7.5"/>
+    <path d="M39 80H90" stroke-width="7"/>
+  </g>
+</svg>

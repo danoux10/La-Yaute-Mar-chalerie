@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Tête de mulet — oreilles intermédiaires">
+  <title>Tête de mulet — oreilles intermédiaires</title>
+  
+  <g fill="none" stroke="currentColor" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M28 90 32 77c-7-10-8-24-4-33L19 11c-1-5 5-7 8-2l20 24L61 10c4-6 9-3 7 3l-7 31c16 8 22 20 23 32l4 7c1 5-5 10-11 9l-18-4-11-11-4 14"/>
+    <path d="M29 44c-11 6-16 18-15 33 M37 43l8-8 13 8 M56 57c5-1 8 0 12 3M75 76l11 4M78 87l-12-3"/>
+  </g><circle cx="68" cy="63" r="2.9" fill="currentColor"/>
+  <path d="M24 17 40 34M64 19l-11 17" fill="none" stroke="#0755FF" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,21 @@
+---
+getaroom:
+  icons:
+    - map-location-dot
+  label: getaroom
+  url: https://www.getaroom.com
+harvard-medical-school:
+  icons:
+    - heart
+  label: Harvard Medical School
+  url: https://hms.harvard.edu
+rocket-chat:
+  icons:
+    - phone
+  label: Rocket.Chat
+  url: https://rocket.chat
+un-ocha:
+  icons:
+    - chart-simple
+  label: United Nations OCHA
+  url: https://www.unocha.org

@@ -1,0 +1,878 @@
+(function () {
+  'use strict';
+
+  var _WINDOW = {};
+  var _DOCUMENT = {};
+  try {
+    if (typeof window !== 'undefined') _WINDOW = window;
+    if (typeof document !== 'undefined') _DOCUMENT = document;
+  } catch (e) {} // eslint-disable-line no-empty
+
+  var _ref = _WINDOW.navigator || {},
+    _ref$userAgent = _ref.userAgent,
+    userAgent = _ref$userAgent === void 0 ? '' : _ref$userAgent;
+  var WINDOW = _WINDOW;
+  var DOCUMENT = _DOCUMENT;
+  var IS_BROWSER = !!WINDOW.document;
+  var IS_DOM = !!DOCUMENT.documentElement && !!DOCUMENT.head && typeof DOCUMENT.addEventListener === 'function' && typeof DOCUMENT.createElement === 'function';
+  var IS_IE = ~userAgent.indexOf('MSIE') || ~userAgent.indexOf('Trident/');
+
+  function _arrayLikeToArray(r, a) {
+    (null == a || a > r.length) && (a = r.length);
+    for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e];
+    return n;
+  }
+  function _arrayWithoutHoles(r) {
+    if (Array.isArray(r)) return _arrayLikeToArray(r);
+  }
+  function _defineProperty(e, r, t) {
+    return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, {
+      value: t,
+      enumerable: !0,
+      configurable: !0,
+      writable: !0
+    }) : e[r] = t, e;
+  }
+  function _iterableToArray(r) {
+    if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r);
+  }
+  function _nonIterableSpread() {
+    throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+  function ownKeys(e, r) {
+    var t = Object.keys(e);
+    if (Object.getOwnPropertySymbols) {
+      var o = Object.getOwnPropertySymbols(e);
+      r && (o = o.filter(function (r) {
+        return Object.getOwnPropertyDescriptor(e, r).enumerable;
+      })), t.push.apply(t, o);
+    }
+    return t;
+  }
+  function _objectSpread2(e) {
+    for (var r = 1; r < arguments.length; r++) {
+      var t = null != arguments[r] ? arguments[r] : {};
+      r % 2 ? ownKeys(Object(t), !0).forEach(function (r) {
+        _defineProperty(e, r, t[r]);
+      }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) {
+        Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
+      });
+    }
+    return e;
+  }
+  function _toConsumableArray(r) {
+    return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread();
+  }
+  function _toPrimitive(t, r) {
+    if ("object" != typeof t || !t) return t;
+    var e = t[Symbol.toPrimitive];
+    if (void 0 !== e) {
+      var i = e.call(t, r || "default");
+      if ("object" != typeof i) return i;
+      throw new TypeError("@@toPrimitive must return a primitive value.");
+    }
+    return ("string" === r ? String : Number)(t);
+  }
+  function _toPropertyKey(t) {
+    var i = _toPrimitive(t, "string");
+    return "symbol" == typeof i ? i : i + "";
+  }
+  function _unsupportedIterableToArray(r, a) {
+    if (r) {
+      if ("string" == typeof r) return _arrayLikeToArray(r, a);
+      var t = {}.toString.call(r).slice(8, -1);
+      return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0;
+    }
+  }
+
+  var _cl;
+  var rl = {
+      classic: {
+        fa: "solid",
+        fas: "solid",
+        "fa-solid": "solid",
+        far: "regular",
+        "fa-regular": "regular",
+        fal: "light",
+        "fa-light": "light",
+        fat: "thin",
+        "fa-thin": "thin",
+        fab: "brands",
+        "fa-brands": "brands"
+      },
+      duotone: {
+        fa: "solid",
+        fad: "solid",
+        "fa-solid": "solid",
+        "fa-duotone": "solid",
+        fadr: "regular",
+        "fa-regular": "regular",
+        fadl: "light",
+        "fa-light": "light",
+        fadt: "thin",
+        "fa-thin": "thin"
+      },
+      sharp: {
+        fa: "solid",
+        fass: "solid",
+        "fa-solid": "solid",
+        fasr: "regular",
+        "fa-regular": "regular",
+        fasl: "light",
+        "fa-light": "light",
+        fast: "thin",
+        "fa-thin": "thin"
+      },
+      "sharp-duotone": {
+        fa: "solid",
+        fasds: "solid",
+        "fa-solid": "solid",
+        fasdr: "regular",
+        "fa-regular": "regular",
+        fasdl: "light",
+        "fa-light": "light",
+        fasdt: "thin",
+        "fa-thin": "thin"
+      },
+      slab: {
+        "fa-regular": "regular",
+        faslr: "regular"
+      },
+      "slab-press": {
+        "fa-regular": "regular",
+        faslpr: "regular"
+      },
+      "slab-duo": {
+        "fa-regular": "regular",
+        fasldr: "regular"
+      },
+      "slab-press-duo": {
+        "fa-regular": "regular",
+        faslpdr: "regular"
+      },
+      thumbprint: {
+        "fa-light": "light",
+        fatl: "light"
+      },
+      vellum: {
+        "fa-solid": "solid",
+        favs: "solid"
+      },
+      pixel: {
+        "fa-regular": "regular",
+        fapr: "regular"
+      },
+      mosaic: {
+        "fa-solid": "solid",
+        fams: "solid"
+      },
+      whiteboard: {
+        "fa-semibold": "semibold",
+        fawsb: "semibold"
+      },
+      notdog: {
+        "fa-solid": "solid",
+        fans: "solid"
+      },
+      "notdog-duo": {
+        "fa-solid": "solid",
+        fands: "solid"
+      },
+      etch: {
+        "fa-solid": "solid",
+        faes: "solid"
+      },
+      graphite: {
+        "fa-thin": "thin",
+        fagt: "thin"
+      },
+      jelly: {
+        "fa-regular": "regular",
+        fajr: "regular"
+      },
+      "jelly-fill": {
+        "fa-regular": "regular",
+        fajfr: "regular"
+      },
+      "jelly-duo": {
+        "fa-regular": "regular",
+        fajdr: "regular"
+      },
+      chisel: {
+        "fa-regular": "regular",
+        facr: "regular"
+      },
+      utility: {
+        "fa-semibold": "semibold",
+        fausb: "semibold"
+      },
+      "utility-duo": {
+        "fa-semibold": "semibold",
+        faudsb: "semibold"
+      },
+      "utility-fill": {
+        "fa-semibold": "semibold",
+        faufsb: "semibold"
+      }
+    };
+  var u = "classic",
+    l = "duotone",
+    h = "sharp",
+    t = "sharp-duotone",
+    g = "chisel",
+    n = "etch",
+    m = "graphite",
+    p = "jelly",
+    s = "jelly-duo",
+    y = "jelly-fill",
+    w = "mosaic",
+    x = "notdog",
+    e = "notdog-duo",
+    b = "pixel",
+    c = "slab",
+    o = "slab-duo",
+    I = "slab-press",
+    a = "slab-press-duo",
+    r = "thumbprint",
+    v = "utility",
+    i = "utility-duo",
+    F = "utility-fill",
+    d = "vellum",
+    S = "whiteboard",
+    A = "Classic",
+    P = "Duotone",
+    j = "Sharp",
+    B = "Sharp Duotone",
+    N = "Chisel",
+    D = "Etch",
+    k = "Graphite",
+    T = "Jelly",
+    C = "Jelly Duo",
+    W = "Jelly Fill",
+    R = "Mosaic",
+    K = "Notdog",
+    L = "Notdog Duo",
+    U = "Pixel",
+    J = "Slab",
+    _ = "Slab Duo",
+    M = "Slab Press",
+    E = "Slab Press Duo",
+    G = "Thumbprint",
+    V = "Utility",
+    z = "Utility Duo",
+    O = "Utility Fill",
+    Y = "Vellum",
+    q = "Whiteboard",
+    cl = (_cl = {}, _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_cl, u, A), l, P), h, j), t, B), g, N), n, D), m, k), p, T), s, C), y, W), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_cl, w, R), x, K), e, L), b, U), c, J), o, _), I, M), a, E), r, G), v, V), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_cl, i, z), F, O), d, Y), S, q));
+  var Al = {
+      classic: {
+        900: "fas",
+        400: "far",
+        normal: "far",
+        300: "fal",
+        100: "fat"
+      },
+      duotone: {
+        900: "fad",
+        400: "fadr",
+        300: "fadl",
+        100: "fadt"
+      },
+      sharp: {
+        900: "fass",
+        400: "fasr",
+        300: "fasl",
+        100: "fast"
+      },
+      "sharp-duotone": {
+        900: "fasds",
+        400: "fasdr",
+        300: "fasdl",
+        100: "fasdt"
+      },
+      slab: {
+        400: "faslr"
+      },
+      "slab-press": {
+        400: "faslpr"
+      },
+      "slab-duo": {
+        400: "fasldr"
+      },
+      "slab-press-duo": {
+        400: "faslpdr"
+      },
+      vellum: {
+        900: "favs"
+      },
+      mosaic: {
+        900: "fams"
+      },
+      pixel: {
+        400: "fapr"
+      },
+      whiteboard: {
+        600: "fawsb"
+      },
+      thumbprint: {
+        300: "fatl"
+      },
+      notdog: {
+        900: "fans"
+      },
+      "notdog-duo": {
+        900: "fands"
+      },
+      etch: {
+        900: "faes"
+      },
+      graphite: {
+        100: "fagt"
+      },
+      chisel: {
+        400: "facr"
+      },
+      jelly: {
+        400: "fajr"
+      },
+      "jelly-fill": {
+        400: "fajfr"
+      },
+      "jelly-duo": {
+        400: "fajdr"
+      },
+      utility: {
+        600: "fausb"
+      },
+      "utility-duo": {
+        600: "faudsb"
+      },
+      "utility-fill": {
+        600: "faufsb"
+      }
+    };
+  var $l = {
+      chisel: {
+        regular: "facr"
+      },
+      classic: {
+        brands: "fab",
+        light: "fal",
+        regular: "far",
+        solid: "fas",
+        thin: "fat"
+      },
+      duotone: {
+        light: "fadl",
+        regular: "fadr",
+        solid: "fad",
+        thin: "fadt"
+      },
+      etch: {
+        solid: "faes"
+      },
+      graphite: {
+        thin: "fagt"
+      },
+      jelly: {
+        regular: "fajr"
+      },
+      "jelly-duo": {
+        regular: "fajdr"
+      },
+      "jelly-fill": {
+        regular: "fajfr"
+      },
+      mosaic: {
+        solid: "fams"
+      },
+      notdog: {
+        solid: "fans"
+      },
+      "notdog-duo": {
+        solid: "fands"
+      },
+      pixel: {
+        regular: "fapr"
+      },
+      sharp: {
+        light: "fasl",
+        regular: "fasr",
+        solid: "fass",
+        thin: "fast"
+      },
+      "sharp-duotone": {
+        light: "fasdl",
+        regular: "fasdr",
+        solid: "fasds",
+        thin: "fasdt"
+      },
+      slab: {
+        regular: "faslr"
+      },
+      "slab-duo": {
+        regular: "fasldr"
+      },
+      "slab-press": {
+        regular: "faslpr"
+      },
+      "slab-press-duo": {
+        regular: "faslpdr"
+      },
+      thumbprint: {
+        light: "fatl"
+      },
+      utility: {
+        semibold: "fausb"
+      },
+      "utility-duo": {
+        semibold: "faudsb"
+      },
+      "utility-fill": {
+        semibold: "faufsb"
+      },
+      vellum: {
+        solid: "favs"
+      },
+      whiteboard: {
+        semibold: "fawsb"
+      }
+    };
+  var rt = {
+      kit: {
+        fak: "kit",
+        "fa-kit": "kit"
+      },
+      "kit-duotone": {
+        fakd: "kit-duotone",
+        "fa-kit-duotone": "kit-duotone"
+      }
+    },
+    it = ["kit"];
+  var H = "kit",
+    f = "kit-duotone",
+    Q = "Kit",
+    X = "Kit Duotone",
+    ht = _defineProperty(_defineProperty({}, H, Q), f, X);
+  var mt = {
+    kit: {
+      "fa-kit": "fak"
+    },
+    "kit-duotone": {
+      "fa-kit-duotone": "fakd"
+    }
+  };
+  var It = {
+      kit: {
+        fak: "fa-kit"
+      },
+      "kit-duotone": {
+        fakd: "fa-kit-duotone"
+      }
+    };
+  var St = {
+      kit: {
+        kit: "fak"
+      },
+      "kit-duotone": {
+        "kit-duotone": "fakd"
+      }
+    };
+
+  var _jl;
+  var l$1 = {
+      GROUP: "duotone-group",
+      SWAP_OPACITY: "swap-opacity",
+      PRIMARY: "primary",
+      SECONDARY: "secondary"
+    };
+  var g$1 = "classic",
+    a$1 = "duotone",
+    m$1 = "sharp",
+    t$1 = "sharp-duotone",
+    p$1 = "chisel",
+    y$1 = "etch",
+    b$1 = "graphite",
+    w$1 = "jelly",
+    e$1 = "jelly-duo",
+    x$1 = "jelly-fill",
+    c$1 = "mosaic",
+    I$1 = "notdog",
+    o$1 = "notdog-duo",
+    v$1 = "pixel",
+    F$1 = "slab",
+    r$1 = "slab-duo",
+    S$1 = "slab-press",
+    i$1 = "slab-press-duo",
+    d$1 = "thumbprint",
+    A$1 = "utility",
+    f$1 = "utility-duo",
+    P$1 = "utility-fill",
+    u$1 = "vellum",
+    j$1 = "whiteboard",
+    B$1 = "Classic",
+    N$1 = "Duotone",
+    D$1 = "Sharp",
+    k$1 = "Sharp Duotone",
+    C$1 = "Chisel",
+    T$1 = "Etch",
+    L$1 = "Graphite",
+    W$1 = "Jelly",
+    R$1 = "Jelly Duo",
+    K$1 = "Jelly Fill",
+    U$1 = "Mosaic",
+    J$1 = "Notdog",
+    _$1 = "Notdog Duo",
+    M$1 = "Pixel",
+    E$1 = "Slab",
+    G$1 = "Slab Duo",
+    O$1 = "Slab Press",
+    V$1 = "Slab Press Duo",
+    z$1 = "Thumbprint",
+    Y$1 = "Utility",
+    $$1 = "Utility Duo",
+    q$1 = "Utility Fill",
+    H$1 = "Vellum",
+    Q$1 = "Whiteboard",
+    jl$1 = (_jl = {}, _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_jl, g$1, B$1), a$1, N$1), m$1, D$1), t$1, k$1), p$1, C$1), y$1, T$1), b$1, L$1), w$1, W$1), e$1, R$1), x$1, K$1), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_jl, c$1, U$1), I$1, J$1), o$1, _$1), v$1, M$1), F$1, E$1), r$1, G$1), S$1, O$1), i$1, V$1), d$1, z$1), A$1, Y$1), _defineProperty(_defineProperty(_defineProperty(_defineProperty(_jl, f$1, $$1), P$1, q$1), u$1, H$1), j$1, Q$1));
+  var X$1 = "kit",
+    h$1 = "kit-duotone",
+    Z$1 = "Kit",
+    ll$1 = "Kit Duotone",
+    ws = _defineProperty(_defineProperty({}, X$1, Z$1), h$1, ll$1);
+  var ra = {
+      classic: {
+        "fa-brands": "fab",
+        "fa-duotone": "fad",
+        "fa-light": "fal",
+        "fa-regular": "far",
+        "fa-solid": "fas",
+        "fa-thin": "fat"
+      },
+      duotone: {
+        "fa-regular": "fadr",
+        "fa-light": "fadl",
+        "fa-thin": "fadt"
+      },
+      sharp: {
+        "fa-solid": "fass",
+        "fa-regular": "fasr",
+        "fa-light": "fasl",
+        "fa-thin": "fast"
+      },
+      "sharp-duotone": {
+        "fa-solid": "fasds",
+        "fa-regular": "fasdr",
+        "fa-light": "fasdl",
+        "fa-thin": "fasdt"
+      },
+      slab: {
+        "fa-regular": "faslr"
+      },
+      "slab-press": {
+        "fa-regular": "faslpr"
+      },
+      "slab-duo": {
+        "fa-regular": "fasldr"
+      },
+      "slab-press-duo": {
+        "fa-regular": "faslpdr"
+      },
+      pixel: {
+        "fa-regular": "fapr"
+      },
+      mosaic: {
+        "fa-solid": "fams"
+      },
+      vellum: {
+        "fa-solid": "favs"
+      },
+      whiteboard: {
+        "fa-semibold": "fawsb"
+      },
+      thumbprint: {
+        "fa-light": "fatl"
+      },
+      notdog: {
+        "fa-solid": "fans"
+      },
+      "notdog-duo": {
+        "fa-solid": "fands"
+      },
+      etch: {
+        "fa-solid": "faes"
+      },
+      graphite: {
+        "fa-thin": "fagt"
+      },
+      jelly: {
+        "fa-regular": "fajr"
+      },
+      "jelly-fill": {
+        "fa-regular": "fajfr"
+      },
+      "jelly-duo": {
+        "fa-regular": "fajdr"
+      },
+      chisel: {
+        "fa-regular": "facr"
+      },
+      utility: {
+        "fa-semibold": "fausb"
+      },
+      "utility-duo": {
+        "fa-semibold": "faudsb"
+      },
+      "utility-fill": {
+        "fa-semibold": "faufsb"
+      }
+    },
+    al$1 = {
+      classic: ["fas", "far", "fal", "fat", "fad"],
+      duotone: ["fadr", "fadl", "fadt"],
+      sharp: ["fass", "fasr", "fasl", "fast"],
+      "sharp-duotone": ["fasds", "fasdr", "fasdl", "fasdt"],
+      slab: ["faslr"],
+      "slab-press": ["faslpr"],
+      "slab-duo": ["fasldr"],
+      "slab-press-duo": ["faslpdr"],
+      pixel: ["fapr"],
+      mosaic: ["fams"],
+      vellum: ["favs"],
+      whiteboard: ["fawsb"],
+      thumbprint: ["fatl"],
+      notdog: ["fans"],
+      "notdog-duo": ["fands"],
+      etch: ["faes"],
+      graphite: ["fagt"],
+      jelly: ["fajr"],
+      "jelly-fill": ["fajfr"],
+      "jelly-duo": ["fajdr"],
+      chisel: ["facr"],
+      utility: ["fausb"],
+      "utility-duo": ["faudsb"],
+      "utility-fill": ["faufsb"]
+    },
+    da = {
+      classic: {
+        fab: "fa-brands",
+        fad: "fa-duotone",
+        fal: "fa-light",
+        far: "fa-regular",
+        fas: "fa-solid",
+        fat: "fa-thin"
+      },
+      duotone: {
+        fadr: "fa-regular",
+        fadl: "fa-light",
+        fadt: "fa-thin"
+      },
+      sharp: {
+        fass: "fa-solid",
+        fasr: "fa-regular",
+        fasl: "fa-light",
+        fast: "fa-thin"
+      },
+      "sharp-duotone": {
+        fasds: "fa-solid",
+        fasdr: "fa-regular",
+        fasdl: "fa-light",
+        fasdt: "fa-thin"
+      },
+      slab: {
+        faslr: "fa-regular"
+      },
+      "slab-press": {
+        faslpr: "fa-regular"
+      },
+      "slab-duo": {
+        fasldr: "fa-regular"
+      },
+      "slab-press-duo": {
+        faslpdr: "fa-regular"
+      },
+      pixel: {
+        fapr: "fa-regular"
+      },
+      mosaic: {
+        fams: "fa-solid"
+      },
+      vellum: {
+        favs: "fa-solid"
+      },
+      whiteboard: {
+        fawsb: "fa-semibold"
+      },
+      thumbprint: {
+        fatl: "fa-light"
+      },
+      notdog: {
+        fans: "fa-solid"
+      },
+      "notdog-duo": {
+        fands: "fa-solid"
+      },
+      etch: {
+        faes: "fa-solid"
+      },
+      graphite: {
+        fagt: "fa-thin"
+      },
+      jelly: {
+        fajr: "fa-regular"
+      },
+      "jelly-fill": {
+        fajfr: "fa-regular"
+      },
+      "jelly-duo": {
+        fajdr: "fa-regular"
+      },
+      chisel: {
+        facr: "fa-regular"
+      },
+      utility: {
+        fausb: "fa-semibold"
+      },
+      "utility-duo": {
+        faudsb: "fa-semibold"
+      },
+      "utility-fill": {
+        faufsb: "fa-semibold"
+      }
+    },
+    el$1 = ["solid", "regular", "light", "thin", "duotone", "brands", "semibold"],
+    sl$1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    ol$1 = sl$1.concat([11, 12, 13, 14, 15, 16, 17, 18, 19, 20]),
+    rl$1 = ["aw", "fw", "pull-left", "pull-right"],
+    ga = [].concat(_toConsumableArray(Object.keys(al$1)), el$1, rl$1, ["2xs", "xs", "sm", "lg", "xl", "2xl", "beat", "beat-fade", "border", "bounce", "buzz", "canvas-square", "canvas-roomy", "fade", "flip-360", "flip-both", "flip-horizontal", "flip-vertical", "flip", "float", "inverse", "jello", "layers", "layers-bottom-left", "layers-bottom-right", "layers-counter", "layers-text", "layers-top-left", "layers-top-right", "li", "pull-end", "pull-start", "pulse", "rotate-180", "rotate-270", "rotate-90", "rotate-by", "shake", "spin-pulse", "spin-reverse", "spin", "spin-snap", "spin-snap-4", "spin-snap-8", "stack-1x", "stack-2x", "stack", "swing", "ul", "wag", "width-auto", "width-fixed", l$1.GROUP, l$1.SWAP_OPACITY, l$1.PRIMARY, l$1.SECONDARY]).concat(sl$1.map(function (s) {
+      return "".concat(s, "x");
+    })).concat(ol$1.map(function (s) {
+      return "w-".concat(s);
+    }));
+
+  var NAMESPACE_IDENTIFIER = '___FONT_AWESOME___';
+  var PRODUCTION = function () {
+    try {
+      return "production" === 'production';
+    } catch (e$$1) {
+      return false;
+    }
+  }();
+  function familyProxy(obj) {
+    // Defaults to the classic family if family is not available
+    return new Proxy(obj, {
+      get: function get(target, prop) {
+        return prop in target ? target[prop] : target[u];
+      }
+    });
+  }
+  var _PREFIX_TO_STYLE = _objectSpread2({}, rl);
+
+  // We changed FACSSClassesToStyleId in the icons repo to be canonical and as such, "classic" family does not have any
+  // duotone styles.  But we do still need duotone in _PREFIX_TO_STYLE below, so we are manually adding
+  // {'fa-duotone': 'duotone'}
+  _PREFIX_TO_STYLE[u] = _objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, {
+    'fa-duotone': 'duotone'
+  }), rl[u]), rt['kit']), rt['kit-duotone']);
+  var PREFIX_TO_STYLE = familyProxy(_PREFIX_TO_STYLE);
+  var _STYLE_TO_PREFIX = _objectSpread2({}, $l);
+
+  // We changed FAStyleIdToShortPrefixId in the icons repo to be canonical and as such, "classic" family does not have any
+  // duotone styles.  But we do still need duotone in _STYLE_TO_PREFIX below, so we are manually adding {duotone: 'fad'}
+  _STYLE_TO_PREFIX[u] = _objectSpread2(_objectSpread2(_objectSpread2(_objectSpread2({}, {
+    duotone: 'fad'
+  }), _STYLE_TO_PREFIX[u]), St['kit']), St['kit-duotone']);
+  var STYLE_TO_PREFIX = familyProxy(_STYLE_TO_PREFIX);
+  var _PREFIX_TO_LONG_STYLE = _objectSpread2({}, da);
+  _PREFIX_TO_LONG_STYLE[u] = _objectSpread2(_objectSpread2({}, _PREFIX_TO_LONG_STYLE[u]), It['kit']);
+  var PREFIX_TO_LONG_STYLE = familyProxy(_PREFIX_TO_LONG_STYLE);
+  var _LONG_STYLE_TO_PREFIX = _objectSpread2({}, ra);
+  _LONG_STYLE_TO_PREFIX[u] = _objectSpread2(_objectSpread2({}, _LONG_STYLE_TO_PREFIX[u]), mt['kit']);
+  var LONG_STYLE_TO_PREFIX = familyProxy(_LONG_STYLE_TO_PREFIX);
+  var _FONT_WEIGHT_TO_PREFIX = _objectSpread2({}, Al);
+  var FONT_WEIGHT_TO_PREFIX = familyProxy(_FONT_WEIGHT_TO_PREFIX);
+  var RESERVED_CLASSES = [].concat(_toConsumableArray(it), _toConsumableArray(ga));
+
+  function bunker(fn) {
+    try {
+      for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+        args[_key - 1] = arguments[_key];
+      }
+      fn.apply(void 0, args);
+    } catch (e) {
+      if (!PRODUCTION) {
+        throw e;
+      }
+    }
+  }
+
+  var w$2 = WINDOW || {};
+  if (!w$2[NAMESPACE_IDENTIFIER]) w$2[NAMESPACE_IDENTIFIER] = {};
+  if (!w$2[NAMESPACE_IDENTIFIER].styles) w$2[NAMESPACE_IDENTIFIER].styles = {};
+  if (!w$2[NAMESPACE_IDENTIFIER].hooks) w$2[NAMESPACE_IDENTIFIER].hooks = {};
+  if (!w$2[NAMESPACE_IDENTIFIER].shims) w$2[NAMESPACE_IDENTIFIER].shims = [];
+  var namespace = w$2[NAMESPACE_IDENTIFIER];
+
+  function normalizeIcons(icons) {
+    return Object.keys(icons).reduce(function (acc, iconName) {
+      var icon = icons[iconName];
+      var expanded = !!icon.icon;
+      if (expanded) {
+        acc[icon.iconName] = icon.icon;
+      } else {
+        acc[iconName] = icon;
+      }
+      return acc;
+    }, {});
+  }
+  function defineIcons(prefix, icons) {
+    var params = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+    var _params$skipHooks = params.skipHooks,
+      skipHooks = _params$skipHooks === void 0 ? false : _params$skipHooks;
+    var normalized = normalizeIcons(icons);
+    if (typeof namespace.hooks.addPack === 'function' && !skipHooks) {
+      namespace.hooks.addPack(prefix, normalizeIcons(icons));
+    } else {
+      namespace.styles[prefix] = _objectSpread2(_objectSpread2({}, namespace.styles[prefix] || {}), normalized);
+    }
+
+    /**
+     * Font Awesome 4 used the prefix of `fa` for all icons. With the introduction
+     * of new styles we needed to differentiate between them. Prefix `fa` is now an alias
+     * for `fas` so we'll ease the upgrade process for our users by automatically defining
+     * this as well.
+     */
+    if (prefix === 'fas') {
+      defineIcons('fa', icons);
+    }
+  }
+
+  var icons = {
+    
+    "address-card": [576,512,["62140","contact-card","vcard"],"f2bb","M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l448 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zm80 256l64 0c44.2 0 80 35.8 80 80 0 8.8-7.2 16-16 16L80 384c-8.8 0-16-7.2-16-16 0-44.2 35.8-80 80-80zm-24-96a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm240-48l112 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-112 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm0 96l112 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-112 0c-13.3 0-24-10.7-24-24s10.7-24 24-24z"],
+    "arrow-right-long": [576,512,["long-arrow-right"],"f178","M566.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-128-128c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L466.7 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l434.7 0-73.4 73.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l128-128z"],
+    "camera": [512,512,["62258","camera-alt"],"f030","M149.1 64.8L138.7 96 64 96C28.7 96 0 124.7 0 160L0 416c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-256c0-35.3-28.7-64-64-64l-74.7 0-10.4-31.2C356.4 45.2 338.1 32 317.4 32L194.6 32c-20.7 0-39 13.2-45.5 32.8zM256 192a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"],
+    "chart-simple": [512,512,[],"e473","M192 80c0-26.5 21.5-48 48-48l32 0c26.5 0 48 21.5 48 48l0 352c0 26.5-21.5 48-48 48l-32 0c-26.5 0-48-21.5-48-48l0-352zM0 272c0-26.5 21.5-48 48-48l32 0c26.5 0 48 21.5 48 48l0 160c0 26.5-21.5 48-48 48l-32 0c-26.5 0-48-21.5-48-48L0 272zM432 96l32 0c26.5 0 48 21.5 48 48l0 288c0 26.5-21.5 48-48 48l-32 0c-26.5 0-48-21.5-48-48l0-288c0-26.5 21.5-48 48-48z"],
+    "coins": [512,512,[],"f51e","M128 96l0-16c0-44.2 86-80 192-80S512 35.8 512 80l0 16c0 30.6-41.3 57.2-102 70.7-2.4-2.8-4.9-5.5-7.4-8-15.5-15.3-35.5-26.9-56.4-35.5-41.9-17.5-96.5-27.1-154.2-27.1-21.9 0-43.3 1.4-63.8 4.1-.2-1.3-.2-2.7-.2-4.1zM432 353l0-46.2c15.1-3.9 29.3-8.5 42.2-13.9 13.2-5.5 26.1-12.2 37.8-20.3l0 15.4c0 26.8-31.5 50.5-80 65zm0-96l0-33c0-4.5-.4-8.8-1-13 15.5-3.9 30-8.6 43.2-14.2s26.1-12.2 37.8-20.3l0 15.4c0 26.8-31.5 50.5-80 65zM0 240l0-16c0-44.2 86-80 192-80s192 35.8 192 80l0 16c0 44.2-86 80-192 80S0 284.2 0 240zm384 96c0 44.2-86 80-192 80S0 380.2 0 336l0-15.4c11.6 8.1 24.5 14.7 37.8 20.3 41.9 17.5 96.5 27.1 154.2 27.1s112.3-9.7 154.2-27.1c13.2-5.5 26.1-12.2 37.8-20.3l0 15.4zm0 80.6l0 15.4c0 44.2-86 80-192 80S0 476.2 0 432l0-15.4c11.6 8.1 24.5 14.7 37.8 20.3 41.9 17.5 96.5 27.1 154.2 27.1s112.3-9.7 154.2-27.1c13.2-5.5 26.1-12.2 37.8-20.3z"],
+    "envelope": [512,512,["61443","9993","128386"],"f0e0","M48 64c-26.5 0-48 21.5-48 48 0 15.1 7.1 29.3 19.2 38.4l208 156c17.1 12.8 40.5 12.8 57.6 0l208-156c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48L48 64zM0 196L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-188-198.4 148.8c-34.1 25.6-81.1 25.6-115.2 0L0 196z"],
+    "graduation-cap": [576,512,["127891","mortar-board"],"f19d","M48 195.8l209.2 86.1c9.8 4 20.2 6.1 30.8 6.1s21-2.1 30.8-6.1l242.4-99.8c9-3.7 14.8-12.4 14.8-22.1s-5.8-18.4-14.8-22.1L318.8 38.1C309 34.1 298.6 32 288 32s-21 2.1-30.8 6.1L14.8 137.9C5.8 141.6 0 150.3 0 160L0 456c0 13.3 10.7 24 24 24s24-10.7 24-24l0-260.2zm48 71.7L96 384c0 53 86 96 192 96s192-43 192-96l0-116.6-142.9 58.9c-15.6 6.4-32.2 9.7-49.1 9.7s-33.5-3.3-49.1-9.7L96 267.4z"],
+    "heart": [512,512,["61578","10084","9829","129505","129294","129293","128420","128156","128155","128154","128153"],"f004","M241 87.1l15 20.7 15-20.7C296 52.5 336.2 32 378.9 32 452.4 32 512 91.6 512 165.1l0 2.6c0 112.2-139.9 242.5-212.9 298.2-12.4 9.4-27.6 14.1-43.1 14.1s-30.8-4.6-43.1-14.1C139.9 410.2 0 279.9 0 167.7l0-2.6C0 91.6 59.6 32 133.1 32 175.8 32 216 52.5 241 87.1z"],
+    "house": [512,512,["63500","63498","127968","home","home-alt","home-lg-alt"],"f015","M277.8 8.6c-12.3-11.4-31.3-11.4-43.5 0l-224 208c-9.6 9-12.8 22.9-8 35.1S18.8 272 32 272l16 0 0 176c0 35.3 28.7 64 64 64l288 0c35.3 0 64-28.7 64-64l0-176 16 0c13.2 0 25-8.1 29.8-20.3s1.6-26.2-8-35.1l-224-208zM240 320l32 0c26.5 0 48 21.5 48 48l0 96-128 0 0-96c0-26.5 21.5-48 48-48z"],
+    "location-dot": [384,512,["map-marker-alt"],"f3c5","M0 188.6C0 84.4 86 0 192 0S384 84.4 384 188.6c0 119.3-120.2 262.3-170.4 316.8-11.8 12.8-31.5 12.8-43.3 0-50.2-54.5-170.4-197.5-170.4-316.8zM192 256a64 64 0 1 0 0-128 64 64 0 1 0 0 128z"],
+    "map-location-dot": [640,512,["map-marked-alt"],"f5a0","M576 48c0-11.1-5.7-21.4-15.2-27.2s-21.2-6.4-31.1-1.4L413.5 77.5 234.1 17.6c-8.1-2.7-16.8-2.1-24.4 1.7l-128 64C70.8 88.8 64 99.9 64 112l0 352c0 11.1 5.7 21.4 15.2 27.2s21.2 6.4 31.1 1.4l116.1-58.1 173.3 57.8c-4.3-6.4-8.5-13.1-12.6-19.9-11-18.3-21.9-39.3-30-61.8l-101.2-33.7 0-284.5 128 42.7 0 99.3c31-35.8 77-58.4 128-58.4 22.6 0 44.2 4.4 64 12.5L576 48zM512 224c-66.3 0-120 52.8-120 117.9 0 68.9 64.1 150.4 98.6 189.3 11.6 13 31.3 13 42.9 0 34.5-38.9 98.6-120.4 98.6-189.3 0-65.1-53.7-117.9-120-117.9zM472 344a40 40 0 1 1 80 0 40 40 0 1 1 -80 0z"],
+    "phone": [512,512,["128379","128222"],"f095","M160.2 25C152.3 6.1 131.7-3.9 112.1 1.4l-5.5 1.5c-64.6 17.6-119.8 80.2-103.7 156.4 37.1 175 174.8 312.7 349.8 349.8 76.3 16.2 138.8-39.1 156.4-103.7l1.5-5.5c5.4-19.7-4.7-40.3-23.5-48.1l-97.3-40.5c-16.5-6.9-35.6-2.1-47 11.8l-38.6 47.2C233.9 335.4 177.3 277 144.8 205.3L189 169.3c13.9-11.3 18.6-30.4 11.8-47L160.2 25z"],
+    "user-tie": [448,512,[],"f508","M224 248a120 120 0 1 1 0-240 120 120 0 1 1 0 240zm-30.5 56l61 0c9.7 0 17.5 7.8 17.5 17.5 0 4.2-1.5 8.2-4.2 11.4l-27.4 32 31 115.1 .6 0 34.6-138.5c2.2-8.7 11.1-14 19.5-10.8 61.9 23.6 105.9 83.6 105.9 153.8 0 15.1-12.3 27.4-27.4 27.4L43.4 512c-15.1 0-27.4-12.3-27.4-27.4 0-70.2 44-130.2 105.9-153.8 8.4-3.2 17.3 2.1 19.5 10.8l34.6 138.5 .6 0 31-115.1-27.4-32c-2.7-3.2-4.2-7.2-4.2-11.4 0-9.7 7.8-17.5 17.5-17.5z"]
+
+  };
+  var prefixes = [null    ,'fas',
+    ,'fa-solid'
+];
+  bunker(function () {
+    for (var _i = 0, _prefixes = prefixes; _i < _prefixes.length; _i++) {
+      var prefix = _prefixes[_i];
+      if (!prefix) continue;
+      defineIcons(prefix, icons);
+    }
+  });
+
+}());

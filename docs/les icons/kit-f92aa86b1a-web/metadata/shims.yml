@@ -1,0 +1,12 @@
+---
+home:
+  name: house
+map-marker:
+  name: location-dot
+mortar-board:
+  name: graduation-cap
+vcard:
+  name: address-card
+vcard-o:
+  name: address-card
+  prefix: far
