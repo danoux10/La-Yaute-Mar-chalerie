@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 360" width="300" height="360" role="img" aria-labelledby="title desc">
+  <title id="title">Blason de Savoie</title>
+  <desc id="desc">Écu rouge à croix blanche, bordé de blanc et de noir.</desc>
+  <defs>
+    <path id="shield" d="M150 15 C110 16 66 25 25 41 L25 169 C25 249 75 309 150 346 C225 309 275 249 275 169 L275 41 C234 25 190 16 150 15 Z"/>
+    <path id="field" d="M150 30 C112 31 72 39 40 51 L40 169 C40 238 82 288 150 329 C218 288 260 238 260 169 L260 51 C228 39 188 31 150 30 Z"/>
+    <clipPath id="clip-shield">
+      <use href="#field"/>
+    </clipPath>
+  </defs>
+  <use href="#shield" fill="#fff" stroke="#0B0B0B" stroke-width="8" stroke-linejoin="round"/>
+  <use href="#field" fill="#C8102E"/>
+  <g fill="#fff" clip-path="url(#clip-shield)">
+    <rect x="130" y="0" width="40" height="360"/>
+    <rect x="0" y="151" width="300" height="43"/>
+  </g>
+</svg>

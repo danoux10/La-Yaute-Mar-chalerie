@@ -1,0 +1,14 @@
+1.SIRET et statut professionnel
+2.Commune de départ / adresse à afficher
+3.Réseaux sociaux
+4.Prestations exactes (animal, service…)
+5.Autres interventions / particularités
+6.Zone d’intervention (communes / rayon)
+7.Secteurs exclus / déplacement minimum
+8.Jours d’activité
+9.Horaires pour les appels
+10.Prise de rendez-vous (appel / SMS / autre)
+11.Délai moyen pour un rendez-vous
+12.Présentation / parcours professionnel
+13.Années d’expérience / formations
+14.Valeurs et méthodes de travail
