@@ -1,11 +1,29 @@
 ﻿@use "reset";
+@use "variables" as v;
+@use "breakpoint" as bp;
 @use 'banner';
 @use 'confidentialiter';
 @use 'galerie';
 @use 'intervention';
-@use 'Mentions-legales';
+@use 'mentions-legales';
 @use 'presentation';
 @use 'prestation';
 @use 'propos';
 @use 'footer';
 @use 'header';
+
+body{
+  background: v.$background;
+  color: v.$color;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+img{
+  max-width: 100%;
+}
+
+a:focus-visible, button:focus-visible{
+  outline: 3px solid white;
+  outline-offset: 5px;
+}

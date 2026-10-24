@@ -1,0 +1,242 @@
+// MOBILE : styles autonomes, sélectionnés par le HTML en dessous de 900 px.
+// Modifier ce fichier pour cette présentation uniquement.
+// Styles de base de ce bloc. Aucun framework n'est nécessaire.
+$fond: #020817;
+$texte: #b9c0d3;
+$bleu: #0047ff;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: $fond;
+  color: $texte;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+a:focus-visible, button:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 5px;
+}
+
+h1, h2, p {
+  margin: 0;
+}
+
+h1 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(39px, 12vw, 52px);
+  line-height: 1.02;
+  letter-spacing: -2px;
+  margin: 34px 0 26px;
+}
+
+h1 span {
+  display: block;
+  color: $bleu;
+}
+
+p + p {
+  margin-top: 28px;
+}
+
+.section {
+  position: relative;
+  isolation: isolate;
+  padding: 30px 22px 40px;
+  overflow: hidden;
+  max-width: 1600px;
+  margin-inline: auto;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 2.8px;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $bleu;
+  flex-shrink: 0;
+}
+
+.eyebrow::after {
+  content: '';
+  height: 2px;
+  background: $bleu;
+  width: 60px;
+  margin-left: auto;
+}
+
+.icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  background: $bleu;
+  color: white;
+  border-radius: 8px;
+  padding: 13px 20px;
+  font-weight: bold;
+}
+
+.button span {
+  font-size: 27px;
+  line-height: 1;
+}
+
+.landscape {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-top: 36px;
+}
+
+.small-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.contacts .icon {
+  filter: invert(22%) sepia(100%) saturate(6000%) hue-rotate(224deg) brightness(100%);
+}
+
+.footer {
+  margin:0 22px;
+  border-top:2px solid $bleu;
+  padding:28px 2px 24px;
+}
+
+.footer h1 {
+  font: bold 12px Arial,sans-serif;
+  text-transform:uppercase;
+  letter-spacing:3px;
+  margin:0 0 25px;
+}
+
+.footer h1::after {
+  content:'';
+  display:block;
+  background:$bleu;
+  width:55px;
+  height:2px;
+  margin-top:16px;
+}
+
+.contacts {
+  font-style:normal;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.contacts a {
+  display:flex;
+  align-items:center;
+  gap:15px;
+  font-size:14px;
+  overflow-wrap:anywhere;
+}
+
+.contacts .icon,.instagram {
+  flex-shrink:0;
+  width:38px;
+  height:38px;
+  padding:7px;
+  border:1px solid #304866;
+  border-radius:50%;
+}
+
+.instagram {
+  color:$bleu;
+  font-size:28px;
+  line-height:22px;
+  text-align:center;
+}
+
+.footer-bottom {
+  display:flex;
+  flex-direction:column-reverse;
+  gap:42px;
+  margin-top:38px;
+  border-top:1px solid #2d405e;
+  padding-top:18px;
+  font-size:12px;
+}
+
+.legal-links {
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.legal-links button {
+  color:$texte;
+  border:0;
+  background:none;
+  padding:0;
+  font-size:12px;
+  text-align:left;
+}
+
+.rights {
+  display:none;
+}
+
+dialog {
+  background:#0c1627;
+  color:$texte;
+  border:1px solid #344967;
+  border-radius:12px;
+  padding:28px;
+  max-width:min(90vw,520px);
+}
+
+dialog::backdrop {
+  background:#000a;
+}
+
+dialog h2 {
+  font-size:22px;
+  margin-bottom:20px;
+}
+
+dialog .button {
+  border:0;
+  margin-top:24px;
+}
+

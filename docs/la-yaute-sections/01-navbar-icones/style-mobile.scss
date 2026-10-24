@@ -1,0 +1,143 @@
+// MOBILE : appliqué en dessous de 900 px par le HTML.
+// Couleurs et réglages de base : ce fichier est autonome.
+$fond: #020817;
+$texte: #b9c0d3;
+$bleu: #0047ff;
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: $fond;
+  color: $texte;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+// Le header contient le logo, le bouton et la navigation.
+header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 22px;
+  border-bottom: 1px solid #263851;
+  .brand {
+    flex-shrink: 0;
+    img { display: block; width: 100%; }
+  }
+
+  a { color: inherit; text-decoration: none; }
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 5px;
+  }
+
+  nav {
+    .navbar-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      // La classe est sur le span, le SVG remplit ce conteneur.
+      .nav-icon {
+        display: inline-flex;
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+
+        svg { display: block; width: 100%; height: 100%; }
+      }
+
+      .nav-text { line-height: 1.4; }
+
+      &:hover, &:focus-visible {
+        color: white;
+        background: #0c2147;
+        border-radius: 7px;
+      }
+    }
+  }
+
+  .brand { width: 108px; }
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 0;
+    background: none;
+    color: $texte;
+    font: inherit;
+    font-size: 10px;
+    letter-spacing: 2px;
+    cursor: pointer;
+
+    .menu-symbol {
+      position: relative;
+      display: block;
+      width: 42px;
+      height: 44px;
+      background: #0e192e;
+      border-radius: 9px;
+
+      .toggle-bar {
+        position: absolute;
+        top: 21px;
+        left: 10px;
+        width: 22px;
+        height: 2px;
+        background: currentColor;
+        border-radius: 2px;
+        transition: transform 250ms ease, opacity 250ms ease;
+
+        &:nth-child(1) { transform: translateY(-7px); }
+        &:nth-child(3) { transform: translateY(7px); }
+      }
+    }
+
+    // L'état accessible du bouton commande aussi l'animation des barres.
+    &[aria-expanded="true"] {
+      .toggle-bar {
+        &:nth-child(1) { transform: rotate(45deg); }
+        &:nth-child(2) { opacity: 0; transform: scaleX(0); }
+        &:nth-child(3) { transform: rotate(-45deg); }
+      }
+    }
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    top: 100%;
+    left: 0;
+    right: 0;
+    padding: 24px;
+    background: #08111e;
+
+    &.is-open { display: block; }
+
+    .navbar-link {
+      padding: 13px 16px;
+      border-bottom: 1px solid #152238;
+      font-size: 14px;
+
+      &.active {
+        color: white;
+        border: 1px solid #123274;
+        background: #081b44;
+        border-radius: 7px;
+      }
+    }
+  }
+}
+
+// Désactiver la transition si l'utilisateur préfère limiter les animations.
+@media (prefers-reduced-motion: reduce) {
+  header {
+    .menu-toggle {
+      .toggle-bar { transition: none; }
+    }
+  }
+}

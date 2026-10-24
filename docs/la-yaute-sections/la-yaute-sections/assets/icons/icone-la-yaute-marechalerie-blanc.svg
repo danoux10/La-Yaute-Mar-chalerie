@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="450" viewBox="0 0 1200 450" fill="none" role="img" aria-labelledby="icon-title icon-description">
+  <title id="icon-title">La Yaute Maréchalerie — montagnes et blason</title>
+  <desc id="icon-description">Chaîne de montagnes alpines et sapins noirs, avec blason rouge à croix blanche de Savoie au premier plan.</desc>
+  <!-- Dessin vectoriel original. Fond transparent, formes nettes à toute taille. -->
+  <g color="#FFFFFF">
+    <!-- Ligne de crêtes : dessin continu et géométrique -->
+    <path d="M65 362 C143 337 211 305 280 264 L340 208 Q347 201 354 207 L387 231 L443 175 Q450 168 456 176 L493 211 L551 163 L632 58 Q640 48 647 57 L741 158 Q757 175 780 175 L799 172 Q810 173 821 186 L883 246 L920 224 Q929 219 936 229 L975 278 L1033 313" stroke="currentColor" stroke-width="13" stroke-linejoin="round" stroke-linecap="round"/>
+    <!-- Premier plan de la montagne de gauche -->
+    <path d="M205 314 L336 248 L371 273 L427 239" stroke="currentColor" stroke-width="7" stroke-linejoin="round" stroke-linecap="round"/>
+    <!-- Tranches et ombres du sommet principal -->
+    <path d="M624 80 L578 151 L602 138 L568 188 L628 151 L604 159 L669 100 L641 115 L653 92 Z" fill="currentColor"/>
+    <path d="M665 106 L694 154 L684 144 L717 194 L696 182 L738 218 L690 197 L671 162 L688 170 Z" fill="currentColor"/>
+    <path d="M561 156 L525 207 L568 185 L547 208 L596 178 L580 186 L605 150 Z" fill="currentColor"/>
+    <path d="M632 191 L644 185 L637 199 L627 204 Z" fill="currentColor"/>
+    <!-- Éperons du massif de gauche -->
+    <path d="M444 190 L410 235 L423 228 L397 266 L449 224 L433 232 L462 209 Z" fill="currentColor"/>
+    <path d="M341 221 L309 274 L330 265 L307 293 L364 249 L347 255 L374 233 Z" fill="currentColor"/>
+    <path d="M287 273 L244 309 L281 295 L268 306 L303 286 Z" fill="currentColor"/>
+    <!-- Éperons du massif de droite -->
+    <path d="M754 177 L800 233 L782 219 L832 268 L804 256 L856 294 L817 258 L793 246 Z" fill="currentColor"/>
+    <path d="M923 237 L949 276 L937 267 L974 305 L950 296 L993 319 L969 291 Z" fill="currentColor"/>
+    <!-- Failles discrètes -->
+    <path d="M727 225 L759 247 L742 241 L773 270 L741 256 Z" fill="currentColor"/>
+    <path d="M506 228 L493 245 L524 231 L517 232 Z" fill="currentColor"/>
+    <!-- Sapins savoyards -->
+    <g transform="translate(995 331) scale(0.58)" class="pine">
+    <path d="M0 -108 L-4 -93 L-1 -92 L-12 -73 L-6 -74 L-20 -57 L-10 -59 L-25 -38 L-13 -42 L-30 -20 L-19 -24 L-33 -7 L-19 -11 L-38 8 L-9 4 L-9 24 L8 24 L8 4 L38 8 L18 -11 L32 -7 L18 -24 L30 -20 L13 -42 L25 -38 L10 -59 L20 -57 L6 -74 L12 -73 L1 -92 L4 -93 Z" fill="currentColor"/>
+    </g>
+    <g transform="translate(1028 334) scale(0.72)" class="pine">
+    <path d="M0 -108 L-4 -93 L-1 -92 L-12 -73 L-6 -74 L-20 -57 L-10 -59 L-25 -38 L-13 -42 L-30 -20 L-19 -24 L-33 -7 L-19 -11 L-38 8 L-9 4 L-9 24 L8 24 L8 4 L38 8 L18 -11 L32 -7 L18 -24 L30 -20 L13 -42 L25 -38 L10 -59 L20 -57 L6 -74 L12 -73 L1 -92 L4 -93 Z" fill="currentColor"/>
+    </g>
+    <g transform="translate(1064 335) scale(0.96)" class="pine">
+    <path d="M0 -108 L-4 -93 L-1 -92 L-12 -73 L-6 -74 L-20 -57 L-10 -59 L-25 -38 L-13 -42 L-30 -20 L-19 -24 L-33 -7 L-19 -11 L-38 8 L-9 4 L-9 24 L8 24 L8 4 L38 8 L18 -11 L32 -7 L18 -24 L30 -20 L13 -42 L25 -38 L10 -59 L20 -57 L6 -74 L12 -73 L1 -92 L4 -93 Z" fill="currentColor"/>
+    </g>
+    <g transform="translate(1097 351) scale(0.65)" class="pine">
+    <path d="M0 -108 L-4 -93 L-1 -92 L-12 -73 L-6 -74 L-20 -57 L-10 -59 L-25 -38 L-13 -42 L-30 -20 L-19 -24 L-33 -7 L-19 -11 L-38 8 L-9 4 L-9 24 L8 24 L8 4 L38 8 L18 -11 L32 -7 L18 -24 L30 -20 L13 -42 L25 -38 L10 -59 L20 -57 L6 -74 L12 -73 L1 -92 L4 -93 Z" fill="currentColor"/>
+    </g>
+    <g transform="translate(1123 365) scale(0.48)" class="pine">
+    <path d="M0 -108 L-4 -93 L-1 -92 L-12 -73 L-6 -74 L-20 -57 L-10 -59 L-25 -38 L-13 -42 L-30 -20 L-19 -24 L-33 -7 L-19 -11 L-38 8 L-9 4 L-9 24 L8 24 L8 4 L38 8 L18 -11 L32 -7 L18 -24 L30 -20 L13 -42 L25 -38 L10 -59 L20 -57 L6 -74 L12 -73 L1 -92 L4 -93 Z" fill="currentColor"/>
+    </g>
+    <!-- Ligne d'horizon, interrompue au centre par le blason -->
+    <path d="M65 362 C200 351 330 335 554 337" stroke="currentColor" stroke-width="11" stroke-linecap="round"/>
+    <path d="M718 337 C934 329 1062 351 1170 383" stroke="currentColor" stroke-width="11" stroke-linecap="round"/>
+  </g>
+  <!-- Le blason savoyard : liseré sombre, bord clair, rouge, croix blanche -->
+  <defs>
+    <path id="shield-shape" d="M570 286 Q637 275 705 286 L705 348 Q701 396 637 429 Q574 396 570 348 Z"/>
+    <clipPath id="shield-clip">
+      <path d="M583 297 Q637 288 692 297 L692 348 Q688 388 637 415 Q588 389 583 348 Z"/>
+    </clipPath>
+  </defs>
+  <use xlink:href="#shield-shape" fill="#FFFFFF"/>
+  <path d="M575 291 Q637 281 700 291 L700 348 Q696 392 637 423 Q579 393 575 348 Z" fill="#FFFFFF"/>
+  <path d="M583 297 Q637 288 692 297 L692 348 Q688 388 637 415 Q588 389 583 348 Z" fill="#C51122"/>
+  <g clip-path="url(#shield-clip)" fill="#FFFFFF">
+    <rect x="624" y="290" width="26" height="129"/>
+    <rect x="580" y="328" width="116" height="26"/>
+  </g>
+  <use xlink:href="#shield-shape" stroke="#FFFFFF" stroke-width="3"/>
+</svg>

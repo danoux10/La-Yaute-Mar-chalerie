@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Navigation — La Yaute</title>
+    <!-- Chaque présentation possède son propre fichier de styles autonome. -->
+    <link rel="stylesheet" href="style-mobile.css" media="(width < 900px)">
+    <link rel="stylesheet" href="style-laptop.css" media="(min-width: 900px)">
+    <script src="script.js" defer>
+    </script>
+  </head>
+  <body>
+    <!-- Début du bloc Navigation : à reprendre dans votre page. -->
+    <header class="navigation">
+      <a class="brand" href="../02-accueil/index.html">
+        <img src="../assets/icons/la-yaute-marechalerie-logo-pro-blanc.svg" alt="La Yaute Maréchalerie">
+      </a>
+      <!-- Le bouton ne s'affiche que sur mobile. -->
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">
+        <span class="menu-label">MENU</span>
+        <!-- Trois barres animées en croix lorsque le menu est ouvert. -->
+        <span class="menu-symbol" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+      <nav id="menu" aria-label="Navigation principale">
+        <p class="menu-heading">Navigation</p>
+        <a class="active" href="../02-accueil/index.html">Accueil</a>
+        <a  href="../03-presentation/index.html">Présentation</a>
+        <a  href="../04-prestations/index.html">Prestations</a>
+        <a  href="../06-zone/index.html">Zone d’intervention</a>
+        <a  href="../05-a-propos/index.html">À propos</a>
+        <a  href="../07-galerie/index.html">Galerie</a>
+        <p class="menu-signature">La Yaute Maréchalerie</p>
+      </nav>
+    </header>
+    <!-- Fin du bloc. -->
+  </body>
+</html>
+
+

@@ -1,0 +1,24 @@
+// ================================
+// BREAKPOINTS
+// ================================
+
+$mobile: 767px;
+$laptop: 768px;
+
+// ================================
+// MIXINS
+// ================================
+
+// 📱 MOBILE (0 à 767px)
+@mixin mobile {
+  @media screen and (max-width: $mobile) {
+    @content;
+  }
+}
+
+// 💻 LAPTOP (768px et plus)
+@mixin laptop {
+  @media screen and (min-width: $laptop) {
+    @content;
+  }
+}

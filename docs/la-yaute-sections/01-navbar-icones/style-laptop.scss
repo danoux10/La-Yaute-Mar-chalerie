@@ -1,0 +1,107 @@
+// LAPTOP : appliqué à partir de 900 px par le HTML.
+// Couleurs et réglages de base : ce fichier est autonome.
+$fond: #020817;
+$texte: #b9c0d3;
+$bleu: #0047ff;
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: $fond;
+  color: $texte;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 5vw, 72px);
+  margin: 16px 25px;
+  padding: 4px 28px;
+  min-height: 108px;
+  border: 1px solid #263851;
+  border-radius: 17px;
+  .brand {
+    flex-shrink: 0;
+    img { display: block; width: 100%; }
+  }
+
+  a { color: inherit; text-decoration: none; }
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 5px;
+  }
+
+  nav {
+    .navbar-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      // La classe est sur le span, le SVG remplit ce conteneur.
+      .nav-icon {
+        display: inline-flex;
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+
+        svg { display: block; width: 100%; height: 100%; }
+      }
+
+      .nav-text { line-height: 1.4; }
+
+      &:hover, &:focus-visible {
+        color: white;
+        background: #0c2147;
+        border-radius: 7px;
+      }
+    }
+  }
+
+  .brand { width: 175px; }
+
+  // Sur laptop, les liens sont toujours visibles : pas de bouton de menu.
+  .menu-toggle { display: none; }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+
+    .navbar-link {
+      padding: 7px 5px;
+      gap: 8px;
+      font-size: 16px;
+
+      &.active {
+        color: $bleu;
+        background: #001139;
+        border-radius: 7px;
+      }
+    }
+  }
+}
+
+// Réduire les espacements sur les petits laptops.
+@media (max-width: 1199px) {
+  header {
+    margin-inline: 16px;
+    padding-inline: 20px;
+    gap: 20px;
+
+    .brand { width: 120px; }
+
+    nav {
+      gap: 6px;
+
+      .navbar-link {
+        font-size: 13px;
+        gap: 6px;
+
+        .nav-icon { width: 16px; height: 16px; }
+      }
+    }
+  }
+}

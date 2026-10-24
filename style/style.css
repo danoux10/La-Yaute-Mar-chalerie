@@ -23,7 +23,7 @@ html {
 body {
   min-height: 100vh;
   line-height: 1.5;
-  font-family: inherit;
+  font-family: sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -116,6 +116,192 @@ p {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+/* header styles laptop */
+/*header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  .brand{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .menu-toggle{
+    display: none;
+  }
+
+  #menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    .navbar-link{
+      position:relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      gap: .5rem;
+      transition: all ease .5s;
+      padding: .5rem;
+      .nav-icon{
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+      .nav-text{
+        &::first-letter{
+          text-transform: uppercase;
+        }
+      }
+      &::before{
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: v.$accent;
+        transition: width .5s ease;
+      }
+      &:hover{
+        color: v.$accent;
+        &::before{
+          width: 100%;
+        }
+      }
+      &.active{
+        font-weight: bold;
+        &::before{
+          width: 100%;
+          height: 100%;
+          border-radius: 5%;
+          transition: height ease .5s;
+        }
+        &:hover{
+            color: v.$color;
+            &::before{
+                width: 100%;
+                height: 2px;
+            }
+        }
+      }
+
+    }
+  }
+}*/
+header {
+  display: flex;
+  margin: 1.06rem 1.66rem;
+  border: 1px solid #263851;
+  border-radius: 1.13px;
+  min-height: 7.2rem;
+  padding: 0.2rem 1.86rem;
+  justify-content: flex-start;
+  gap: clamp(3.33rem, 12vw, 12rem);
+}
+header .brand {
+  width: 11.66rem;
+}
+header .menu-toggle {
+  color: #bec5d9;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: none;
+  border: 0;
+  letter-spacing: 2px;
+}
+header .menu-toggle .menu-symbol {
+  position: relative;
+  display: block;
+  background: #0e182e;
+  border-radius: 9px;
+  height: 2.8rem;
+  width: 2.9rem;
+}
+header .menu-toggle .menu-symbol .toggle-bar {
+  position: absolute;
+  top: 1.4rem;
+  left: 0.6rem;
+  width: 1.46rem;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 250ms ease, opacity 250ms ease;
+}
+header .menu-toggle .menu-symbol .toggle-bar:nth-child(1) {
+  transform: translateY(-7px);
+}
+header .menu-toggle .menu-symbol .toggle-bar:nth-child(3) {
+  transform: translateY(7px);
+}
+header .menu-toggle .menu-symbol .toggle-bar[aria-expander=true]:nth-child(1) {
+  transform: rotate(45deg);
+}
+header .menu-toggle .menu-symbol .toggle-bar[aria-expander=true]:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+header .menu-toggle .menu-symbol .toggle-bar[aria-expander=true]:nth-child(3) {
+  transform: rotate(-45deg);
+}
+header #menu {
+  display: none;
+  position: absolute;
+  z-index: 10;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #08111e;
+  padding: 1.6rem;
+}
+header #menu.is-open {
+  position: static;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  padding: 0;
+  background: none;
+}
+header #menu .navbar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.66rem;
+}
+header #menu .navbar-link.active {
+  color: #fff;
+  border: 1px solid #123274;
+  background: #081b44;
+  border-radius: 7px;
+}
+header #menu .navbar-link .nav-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  fill: currentColor;
+}
+body {
+  background: #000617;
+  color: #bec5d9;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+img {
+  max-width: 100%;
+}
+
+a:focus-visible, button:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */
