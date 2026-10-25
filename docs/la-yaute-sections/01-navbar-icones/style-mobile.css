@@ -7,7 +7,7 @@ body {
   background: #020817;
   color: #b9c0d3;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.55;
 }
 
@@ -16,8 +16,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 22px;
-  border-bottom: 1px solid #263851;
+  padding: 0.625rem 1.375rem;
+  border-bottom: 0.0625rem solid #263851;
 }
 header .brand {
   flex-shrink: 0;
@@ -31,71 +31,71 @@ header a {
   text-decoration: none;
 }
 header a:focus-visible, header button:focus-visible {
-  outline: 3px solid white;
-  outline-offset: 5px;
+  outline: 0.1875rem solid white;
+  outline-offset: 0.3125rem;
 }
-header nav .navbar-link {
+header #menu .navbar-link {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
 }
-header nav .navbar-link .nav-icon {
+header #menu .navbar-link .nav-icon {
   display: inline-flex;
-  width: 18px;
-  height: 18px;
+  width: 1.125rem;
+  height: 1.125rem;
   flex-shrink: 0;
 }
-header nav .navbar-link .nav-icon svg {
+header #menu .navbar-link .nav-icon svg {
   display: block;
   width: 100%;
   height: 100%;
 }
-header nav .navbar-link .nav-text {
+header #menu .navbar-link .nav-text {
   line-height: 1.4;
 }
-header nav .navbar-link:hover, header nav .navbar-link:focus-visible {
+header #menu .navbar-link:hover, header #menu .navbar-link:focus-visible {
   color: white;
   background: #0c2147;
-  border-radius: 7px;
+  border-radius: 0.4375rem;
 }
 header .brand {
-  width: 108px;
+  width: 6.75rem;
 }
 header .menu-toggle {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 1.25rem;
   border: 0;
   background: none;
   color: #b9c0d3;
   font: inherit;
-  font-size: 10px;
-  letter-spacing: 2px;
+  font-size: 0.625rem;
+  letter-spacing: 0.125rem;
   cursor: pointer;
 }
 header .menu-toggle .menu-symbol {
   position: relative;
   display: block;
-  width: 42px;
-  height: 44px;
+  width: 2.625rem;
+  height: 2.75rem;
   background: #0e192e;
-  border-radius: 9px;
+  border-radius: 0.5625rem;
 }
 header .menu-toggle .menu-symbol .toggle-bar {
   position: absolute;
-  top: 21px;
-  left: 10px;
-  width: 22px;
-  height: 2px;
+  top: 1.3125rem;
+  left: 0.625rem;
+  width: 1.375rem;
+  height: 0.125rem;
   background: currentColor;
-  border-radius: 2px;
+  border-radius: 0.125rem;
   transition: transform 250ms ease, opacity 250ms ease;
 }
 header .menu-toggle .menu-symbol .toggle-bar:nth-child(1) {
-  transform: translateY(-7px);
+  transform: translateY(-0.4375rem);
 }
 header .menu-toggle .menu-symbol .toggle-bar:nth-child(3) {
-  transform: translateY(7px);
+  transform: translateY(0.4375rem);
 }
 header .menu-toggle[aria-expanded=true] .toggle-bar:nth-child(1) {
   transform: rotate(45deg);
@@ -107,29 +107,29 @@ header .menu-toggle[aria-expanded=true] .toggle-bar:nth-child(2) {
 header .menu-toggle[aria-expanded=true] .toggle-bar:nth-child(3) {
   transform: rotate(-45deg);
 }
-header nav {
+header #menu {
   display: none;
   position: absolute;
   z-index: 10;
   top: 100%;
   left: 0;
   right: 0;
-  padding: 24px;
+  padding: 1.5rem;
   background: #08111e;
 }
-header nav.is-open {
+header #menu.is-open {
   display: block;
 }
-header nav .navbar-link {
-  padding: 13px 16px;
-  border-bottom: 1px solid #152238;
-  font-size: 14px;
+header #menu .navbar-link {
+  padding: 0.8125rem 1rem;
+  border-bottom: 0.0625rem solid #152238;
+  font-size: 0.875rem;
 }
-header nav .navbar-link.active {
+header #menu .navbar-link.active {
   color: white;
-  border: 1px solid #123274;
+  border: 0.0625rem solid #123274;
   background: #081b44;
-  border-radius: 7px;
+  border-radius: 0.4375rem;
 }
 
 @media (prefers-reduced-motion: reduce) {

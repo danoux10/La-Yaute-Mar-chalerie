@@ -6,8 +6,8 @@ Ce catalogue ne contient pas une page complète assemblée.
 ## Contenu de chaque dossier
 
 - index.html : une seule partie, avec un HTML sémantique et lisible.
-- style-mobile.scss : styles mobiles autonomes et commentés (en dessous de 900 px).
-- style-laptop.scss : styles laptop autonomes et commentés (à partir de 900 px).
+- style-mobile.scss : styles mobiles autonomes et commentés (en dessous de 56.25 rem).
+- style-laptop.scss : styles laptop autonomes et commentés (à partir de 56.25 rem).
 - style-mobile.css et style-laptop.css : fichiers compilés utilisés par le HTML.
 - style.scss et style.css : points d'entrée de compatibilité pour les anciennes intégrations.
 - script.js : interactions utiles uniquement ; commentaire explicatif pour les blocs statiques.
@@ -86,7 +86,7 @@ Les six icônes sont intégrées directement dans le HTML sous forme de balises 
 Dans les huit sections et la variante de navbar avec icônes :
 - style-mobile.scss : présentation mobile autonome ; les navbars conservent le bouton à trois barres animé.
 - style-laptop.scss : présentation laptop autonome.
-- Les deux CSS correspondants sont fournis et sélectionnés par les attributs media dans index.html (seuil : 900 px).
+- Les deux CSS correspondants sont fournis et sélectionnés par les attributs media dans index.html (seuil : 56.25 rem).
 - style.scss reste un point d'entrée de compatibilité qui assemble les deux versions ; modifier les fichiers séparés.
 
 Après modification, compiler le fichier concerné, par exemple :
@@ -95,3 +95,13 @@ Après modification, compiler le fichier concerné, par exemple :
     sass style-laptop.scss style-laptop.css --no-source-map
 
 Pour les intégrations utilisant encore style.css, recompiler également style.scss.
+
+## Unités rem
+
+Toutes les tailles auparavant en px dans les styles sont désormais en rem : typographie, espacements, bordures, dimensions et seuils responsive. Le HTML et le JavaScript utilisent les mêmes seuils que le SCSS.
+
+La conversion prend comme référence la taille de police racine habituelle du navigateur (16 px) : 16 px = 1 rem, 24 px = 1.5 rem et 900 px = 56.25 rem. Aucune taille racine fixe n'est imposée : les réglages de police du visiteur restent respectés.
+
+Les unités %, vw, fr, les durées et les angles restent adaptés à leur usage. Les coordonnées internes des SVG ne sont pas des tailles CSS et restent intactes.
+
+Les aperçus font 24.375 rem (mobile) et 90 rem (laptop), soit 390 et 1440 px avec la police racine par défaut.

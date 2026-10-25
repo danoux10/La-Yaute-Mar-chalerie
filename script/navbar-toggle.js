@@ -1,23 +1,33 @@
-const button = document.querySelector('.menu-toggle');
-const menu = document.querySelector('#menu');
+// Tous les éléments sont recherchés dans le header de navigation.
+const bouton = document.querySelector('header .menu-toggle');
+const header = bouton.closest('header');
+const menu = header.querySelector('#menu');
 
-function toggleMenu(open) {
-  menu.classList.toggle('is-open', open);
-  button.setAttribute('aria-expanded', String(open));
-  button.querySelector('.menu-label').textContent = open ? 'FERMER' : 'MENU';
-  // The SCSS animates the three bars into a cross using aria-expanded, without modifying the HTML.
+function menuToggle(ouvert) {
+  menu.classList.toggle('is-open', ouvert);
+  bouton.setAttribute('aria-expanded', String(ouvert));
+  bouton.querySelector('.menu-label').textContent = ouvert ? 'FERMER' : 'MENU';
+  // Les trois .toggle-bar restent dans le HTML : le SCSS anime leur rotation.
 }
 
-button.addEventListener('click', () => toggleMenu(button.getAttribute('aria-expanded') !== 'true'));
+bouton.addEventListener('click', () => {
+  menuToggle(bouton.getAttribute('aria-expanded') !== 'true');
+});
+
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape' && button.getAttribute('aria-expanded') === 'true') {
-    toggleMenu(false);
-    button.focus();
+  if (event.key === 'Escape' && bouton.getAttribute('aria-expanded') === 'true') {
+    menuToggle(false);
+    bouton.focus();
   }
 });
 
+// Fermer en cliquant à l'extérieur du header ou sur un lien du menu.
 document.addEventListener('click', (event) => {
-  if (!event.target.closest('.navigation')) toggleMenu(false);
+  if (!header.contains(event.target)) menuToggle(false);
+});
+menu.querySelectorAll('.navbar-link').forEach((lien) => {
+  lien.addEventListener('click', () => menuToggle(false));
 });
 
-matchMedia('(min-width: 900px)').addEventListener('change', () => toggleMenu(false));
+// Revenir à l'état fermé quand la présentation change.
+matchMedia('(min-width: 56.25rem)').addEventListener('change', () => menuToggle(false));

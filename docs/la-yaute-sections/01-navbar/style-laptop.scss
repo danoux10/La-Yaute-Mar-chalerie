@@ -1,4 +1,4 @@
-// LAPTOP : fichier autonome, appliqué à partir de 900 px par le HTML.
+// LAPTOP : fichier autonome, appliqué à partir de 56.25 rem par le HTML.
 // Styles de base de ce bloc. Aucun framework n'est nécessaire.
 $fond: #020817;
 $texte: #b9c0d3;
@@ -12,7 +12,7 @@ body {
   background: $fond;
   color: $texte;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.55;
 }
 
@@ -37,8 +37,8 @@ p {
 }
 
 a:focus-visible, button:focus-visible {
-  outline: 3px solid white;
-  outline-offset: 5px;
+  outline: 0.1875rem solid white;
+  outline-offset: 0.3125rem;
 }
 
 // Barre horizontale avec logo et liens visibles.
@@ -46,16 +46,16 @@ a:focus-visible, button:focus-visible {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: clamp(50px, 12vw, 180px);
-  margin: 16px 25px;
-  padding: 4px 28px;
-  min-height: 108px;
-  border: 1px solid #263851;
-  border-radius: 17px;
+  gap: clamp(3.125rem, 12vw, 11.25rem);
+  margin: 1rem 1.5625rem;
+  padding: 0.25rem 1.75rem;
+  min-height: 6.75rem;
+  border: 0.0625rem solid #263851;
+  border-radius: 1.0625rem;
 }
 
 .brand {
-  width: 175px;
+  width: 10.9375rem;
   flex-shrink: 0;
 }
 
@@ -68,19 +68,19 @@ nav {
   &, &.is-open {
     display: flex;
     flex-wrap: wrap;
-    gap: 18px;
+    gap: 1.125rem;
   }
 
   a {
     display: block;
-    padding: 3px 5px;
-    font-size: 16px;
+    padding: 0.1875rem 0.3125rem;
+    font-size: 1rem;
   }
 
   .active {
     color: $bleu;
     background: #001139;
-    border-radius: 7px;
+    border-radius: 0.4375rem;
   }
 
 }

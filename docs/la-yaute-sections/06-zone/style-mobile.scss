@@ -1,4 +1,4 @@
-// MOBILE : styles autonomes, sélectionnés par le HTML en dessous de 900 px.
+// MOBILE : styles autonomes, sélectionnés par le HTML en dessous de 56.25 rem.
 // Modifier ce fichier pour cette présentation uniquement.
 // Styles de base de ce bloc. Aucun framework n'est nécessaire.
 $fond: #020817;
@@ -13,7 +13,7 @@ body {
   background: $fond;
   color: $texte;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.55;
 }
 
@@ -33,8 +33,8 @@ button {
 }
 
 a:focus-visible, button:focus-visible {
-  outline: 3px solid white;
-  outline-offset: 5px;
+  outline: 0.1875rem solid white;
+  outline-offset: 0.3125rem;
 }
 
 h1, h2, p {
@@ -43,10 +43,10 @@ h1, h2, p {
 
 h1 {
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(39px, 12vw, 52px);
+  font-size: clamp(2.4375rem, 12vw, 3.25rem);
   line-height: 1.02;
-  letter-spacing: -2px;
-  margin: 34px 0 26px;
+  letter-spacing: -0.125rem;
+  margin: 2.125rem 0 1.625rem;
   span {
     display: block;
     color: $bleu;
@@ -56,7 +56,7 @@ h1 {
 
 p {
   + p {
-    margin-top: 28px;
+    margin-top: 1.75rem;
   }
 
 }
@@ -64,24 +64,24 @@ p {
 .section {
   position: relative;
   isolation: isolate;
-  padding: 30px 22px 40px;
+  padding: 1.875rem 1.375rem 2.5rem;
   overflow: hidden;
-  max-width: 1600px;
+  max-width: 100rem;
   margin-inline: auto;
 }
 
 .eyebrow {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 10px;
+  gap: 0.625rem;
+  font-size: 0.625rem;
   font-weight: bold;
-  letter-spacing: 2.8px;
+  letter-spacing: 0.175rem;
   text-transform: uppercase;
   &::before {
     content: '';
-    width: 6px;
-    height: 6px;
+    width: 0.375rem;
+    height: 0.375rem;
     border-radius: 50%;
     background: $bleu;
     flex-shrink: 0;
@@ -89,17 +89,17 @@ p {
 
   &::after {
     content: '';
-    height: 2px;
+    height: 0.125rem;
     background: $bleu;
-    width: 60px;
+    width: 3.75rem;
     margin-left: auto;
   }
 
 }
 
 .icon {
-  width: 28px;
-  height: 28px;
+  width: 1.75rem;
+  height: 1.75rem;
   object-fit: contain;
 }
 
@@ -107,14 +107,14 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  gap: 15px;
+  gap: 0.9375rem;
   background: $bleu;
   color: white;
-  border-radius: 8px;
-  padding: 13px 20px;
+  border-radius: 0.5rem;
+  padding: 0.8125rem 1.25rem;
   font-weight: bold;
   span {
-    font-size: 27px;
+    font-size: 1.6875rem;
     line-height: 1;
   }
 
@@ -122,16 +122,16 @@ p {
 
 .landscape {
   width: 100%;
-  height: 210px;
+  height: 13.125rem;
   object-fit: cover;
-  border-radius: 12px;
-  margin-top: 36px;
+  border-radius: 0.75rem;
+  margin-top: 2.25rem;
 }
 
 .small-title {
-  font-size: 11px;
+  font-size: 0.6875rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 0.125rem;
 }
 
 .departure {
@@ -143,7 +143,7 @@ p {
 
 .zone {
   h1 {
-    font-size:50px;
+    font-size:3.125rem;
   }
 
 }
@@ -151,20 +151,20 @@ p {
 .departure {
   display:flex;
   align-items:center;
-  gap:10px;
-  margin-top:46px;
-  font-size:10px;
-  letter-spacing:1.6px;
+  gap:0.625rem;
+  margin-top:2.875rem;
+  font-size:0.625rem;
+  letter-spacing:0.1rem;
   .icon {
-    width:22px;
+    width:1.375rem;
   }
 
 }
 
 .zone {
   .landscape {
-    height:225px;
-    margin-top:28px;
+    height:14.0625rem;
+    margin-top:1.75rem;
   }
 
 }
@@ -174,41 +174,41 @@ p {
   padding:0;
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:10px;
-  margin:24px 0 12px;
+  gap:0.625rem;
+  margin:1.5rem 0 0.75rem;
   li {
     background:#0c1627;
-    border:1px solid #314863;
-    border-radius:10px;
+    border:0.0625rem solid #314863;
+    border-radius:0.625rem;
     text-align:center;
-    padding:10px 3px 14px;
+    padding:0.625rem 0.1875rem 0.875rem;
   }
 
   .icon {
-    width:36px;
-    height:36px;
+    width:2.25rem;
+    height:2.25rem;
     border-radius:50%;
-    padding:4px;
+    padding:0.25rem;
     background:$bleu;
-    margin:0 auto 10px;
+    margin:0 auto 0.625rem;
   }
 
   strong {
     display:block;
-    font-size:12px;
+    font-size:0.75rem;
   }
 
   small {
     display:block;
-    font-size:8px;
-    letter-spacing:.4px;
+    font-size:0.5rem;
+    letter-spacing:0.025rem;
     text-transform:uppercase;
-    margin-top:8px;
+    margin-top:0.5rem;
   }
 
 }
 
 .appointment {
-  font-size:11px;
+  font-size:0.6875rem;
 }
 

@@ -30,4 +30,4 @@ menu.querySelectorAll('.navbar-link').forEach((lien) => {
 });
 
 // Revenir à l'état fermé quand la présentation change.
-matchMedia('(min-width: 900px)').addEventListener('change', () => afficherMenu(false));
+matchMedia('(min-width: 56.25rem)').addEventListener('change', () => afficherMenu(false));

@@ -1,4 +1,4 @@
-@media (width < 900px) {
+@media (width < 56.25rem) {
   * {
     box-sizing: border-box;
   }
@@ -7,7 +7,7 @@
     background: #020817;
     color: #b9c0d3;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
+    font-size: 0.9375rem;
     line-height: 1.55;
   }
   img {
@@ -26,54 +26,54 @@
     margin: 0;
   }
   a:focus-visible, button:focus-visible {
-    outline: 3px solid white;
-    outline-offset: 5px;
+    outline: 0.1875rem solid white;
+    outline-offset: 0.3125rem;
   }
   .navigation {
     position: relative;
-    padding: 10px 22px;
-    border-bottom: 1px solid #263851;
+    padding: 0.625rem 1.375rem;
+    border-bottom: 0.0625rem solid #263851;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
   .brand {
-    width: 108px;
+    width: 6.75rem;
     flex-shrink: 0;
   }
   .menu-toggle {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 1.25rem;
     background: none;
     color: #b9c0d3;
     border: 0;
-    font-size: 10px;
-    letter-spacing: 2px;
+    font-size: 0.625rem;
+    letter-spacing: 0.125rem;
   }
   .menu-symbol {
     position: relative;
     display: block;
     background: #0e192e;
-    border-radius: 9px;
-    width: 42px;
-    height: 44px;
+    border-radius: 0.5625rem;
+    width: 2.625rem;
+    height: 2.75rem;
   }
   .menu-symbol > span {
     position: absolute;
-    top: 21px;
-    left: 10px;
-    width: 22px;
-    height: 2px;
+    top: 1.3125rem;
+    left: 0.625rem;
+    width: 1.375rem;
+    height: 0.125rem;
     background: currentColor;
-    border-radius: 2px;
+    border-radius: 0.125rem;
     transition: transform 250ms ease, opacity 250ms ease;
   }
   .menu-symbol > span:nth-child(1) {
-    transform: translateY(-7px);
+    transform: translateY(-0.4375rem);
   }
   .menu-symbol > span:nth-child(3) {
-    transform: translateY(7px);
+    transform: translateY(0.4375rem);
   }
   .menu-toggle[aria-expanded=true] .menu-symbol > span:nth-child(1) {
     transform: rotate(45deg);
@@ -86,12 +86,12 @@
     transform: rotate(-45deg);
   }
 }
-@media (width < 900px) and (prefers-reduced-motion: reduce) {
+@media (width < 56.25rem) and (prefers-reduced-motion: reduce) {
   .menu-symbol > span {
     transition: none;
   }
 }
-@media (width < 900px) {
+@media (width < 56.25rem) {
   nav {
     display: none;
     position: absolute;
@@ -100,34 +100,34 @@
     left: 0;
     right: 0;
     background: #08111e;
-    padding: 24px;
+    padding: 1.5rem;
   }
   nav.is-open {
     display: block;
   }
   nav a {
     display: block;
-    padding: 13px 16px;
-    font-size: 14px;
-    border-bottom: 1px solid #152238;
+    padding: 0.8125rem 1rem;
+    font-size: 0.875rem;
+    border-bottom: 0.0625rem solid #152238;
   }
   nav .active {
     color: #fff;
-    border: 1px solid #123274;
+    border: 0.0625rem solid #123274;
     background: #081b44;
-    border-radius: 7px;
+    border-radius: 0.4375rem;
   }
   .menu-heading, .menu-signature {
-    font-size: 9px;
+    font-size: 0.5625rem;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
+    letter-spacing: 0.125rem;
+    margin-bottom: 1.25rem;
   }
   .menu-signature {
-    margin: 22px 0 0;
+    margin: 1.375rem 0 0;
   }
 }
-@media (min-width: 900px) {
+@media (min-width: 56.25rem) {
   * {
     box-sizing: border-box;
   }
@@ -136,7 +136,7 @@
     background: #020817;
     color: #b9c0d3;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
+    font-size: 0.9375rem;
     line-height: 1.55;
   }
   img {
@@ -155,22 +155,22 @@
     margin: 0;
   }
   a:focus-visible, button:focus-visible {
-    outline: 3px solid white;
-    outline-offset: 5px;
+    outline: 0.1875rem solid white;
+    outline-offset: 0.3125rem;
   }
   .navigation {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: clamp(50px, 12vw, 180px);
-    margin: 16px 25px;
-    padding: 4px 28px;
-    min-height: 108px;
-    border: 1px solid #263851;
-    border-radius: 17px;
+    gap: clamp(3.125rem, 12vw, 11.25rem);
+    margin: 1rem 1.5625rem;
+    padding: 0.25rem 1.75rem;
+    min-height: 6.75rem;
+    border: 0.0625rem solid #263851;
+    border-radius: 1.0625rem;
   }
   .brand {
-    width: 175px;
+    width: 10.9375rem;
     flex-shrink: 0;
   }
   .menu-toggle, .menu-heading, .menu-signature {
@@ -179,17 +179,17 @@
   nav, nav.is-open {
     display: flex;
     flex-wrap: wrap;
-    gap: 18px;
+    gap: 1.125rem;
   }
   nav a {
     display: block;
-    padding: 3px 5px;
-    font-size: 16px;
+    padding: 0.1875rem 0.3125rem;
+    font-size: 1rem;
   }
   nav .active {
     color: #0047ff;
     background: #001139;
-    border-radius: 7px;
+    border-radius: 0.4375rem;
   }
 }
 

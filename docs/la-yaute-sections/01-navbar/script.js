@@ -12,4 +12,4 @@ document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape' && bouton.getAttribute('aria-expanded') === 'true') { afficherMenu(false); bouton.focus(); }
 });
 document.addEventListener('click', (event) => { if (!event.target.closest('.navigation')) afficherMenu(false); });
-matchMedia('(min-width: 900px)').addEventListener('change', () => afficherMenu(false));
+matchMedia('(min-width: 56.25rem)').addEventListener('change', () => afficherMenu(false));
