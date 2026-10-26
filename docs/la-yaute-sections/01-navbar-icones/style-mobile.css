@@ -34,26 +34,26 @@ header a:focus-visible, header button:focus-visible {
   outline: 0.1875rem solid white;
   outline-offset: 0.3125rem;
 }
-header #menu .navbar-link {
+header nav .navbar-link {
   display: flex;
   align-items: center;
   gap: 0.625rem;
 }
-header #menu .navbar-link .nav-icon {
+header nav .navbar-link .nav-icon {
   display: inline-flex;
   width: 1.125rem;
   height: 1.125rem;
   flex-shrink: 0;
 }
-header #menu .navbar-link .nav-icon svg {
+header nav .navbar-link .nav-icon svg {
   display: block;
   width: 100%;
   height: 100%;
 }
-header #menu .navbar-link .nav-text {
+header nav .navbar-link .nav-text {
   line-height: 1.4;
 }
-header #menu .navbar-link:hover, header #menu .navbar-link:focus-visible {
+header nav .navbar-link:hover, header nav .navbar-link:focus-visible {
   color: white;
   background: #0c2147;
   border-radius: 0.4375rem;
@@ -107,7 +107,7 @@ header .menu-toggle[aria-expanded=true] .toggle-bar:nth-child(2) {
 header .menu-toggle[aria-expanded=true] .toggle-bar:nth-child(3) {
   transform: rotate(-45deg);
 }
-header #menu {
+header nav {
   display: none;
   position: absolute;
   z-index: 10;
@@ -117,15 +117,15 @@ header #menu {
   padding: 1.5rem;
   background: #08111e;
 }
-header #menu.is-open {
+header nav.is-open {
   display: block;
 }
-header #menu .navbar-link {
+header nav .navbar-link {
   padding: 0.8125rem 1rem;
   border-bottom: 0.0625rem solid #152238;
   font-size: 0.875rem;
 }
-header #menu .navbar-link.active {
+header nav .navbar-link.active {
   color: white;
   border: 0.0625rem solid #123274;
   background: #081b44;
@@ -137,5 +137,3 @@ header #menu .navbar-link.active {
     transition: none;
   }
 }
-
-/*# sourceMappingURL=style-mobile.css.map */

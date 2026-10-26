@@ -33,7 +33,7 @@ header {
     outline-offset: 0.3125rem;
   }
 
-  #menu {
+  nav {
     .navbar-link {
       display: flex;
       align-items: center;
@@ -106,7 +106,7 @@ header {
     }
   }
 
-  #menu {
+  nav {
     display: none;
     position: absolute;
     z-index: 10;

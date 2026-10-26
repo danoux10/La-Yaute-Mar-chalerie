@@ -68,7 +68,7 @@ Chaque SCSS est autonome et répète un petit socle (couleurs, typographie, réi
 - Les textes sont conservés dans un seul HTML responsive, sans duplication mobile/laptop.
 - Les photos et SVG sont copiés dans assets ; les fichiers sources du dossier Téléchargements ne sont pas modifiés.
 - Les coordonnées du pied de page sont reprises de la maquette, à vérifier avant publication.
-- Les textes légaux ne sont pas fournis : les boutons affichent une fenêtre indiquant qu'ils sont à compléter.
+- Les documents légaux fournis sont intégrés dans le footer ; les champs entre crochets restent à compléter.
 - Les photos de la galerie restent des illustrations statiques, comme sur la maquette.
 
 ## Aperçu via serveur local (facultatif)
@@ -105,3 +105,7 @@ La conversion prend comme référence la taille de police racine habituelle du n
 Les unités %, vw, fr, les durées et les angles restent adaptés à leur usage. Les coordonnées internes des SVG ne sont pas des tailles CSS et restent intactes.
 
 Les aperçus font 24.375 rem (mobile) et 90 rem (laptop), soit 390 et 1440 px avec la police racine par défaut.
+
+## Pages légales
+
+Le footer renvoie vers deux pages autonomes : 08-footer/mentions-legales.html et 08-footer/confidentialite.html. Elles fonctionnent sans JavaScript et reprennent les textes fournis. Les champs entre crochets restent à compléter. Les liens du footer utilisent target="_top" pour ouvrir le document en pleine page depuis les aperçus en iframe. Lors de l'intégration, adapter le lien « Retour au footer » à l'accueil du site final.

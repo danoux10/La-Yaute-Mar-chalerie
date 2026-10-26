@@ -1,0 +1,182 @@
+@use "variables" as c;
+@use "breakpoint" as bp;
+
+/* ==============================
+   COMMUN
+================================= */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: .2rem solid #263851;
+  border-radius: .5rem;
+
+  h3 {
+    position: relative;
+    padding: .5rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 1rem;
+      width: 5rem;
+      height: .2rem;
+      background: c.$accent;
+    }
+  }
+
+  .contact {
+    display: flex;
+
+    a {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: .5rem;
+
+      .icon-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+          fill: c.$accent;
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    display: flex;
+    border-top: .2rem solid #263851;
+
+    .legal-links {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/* ==============================
+   MOBILE
+================================= */
+
+@include bp.mobile {
+  footer {
+    gap: .5rem;
+    padding: .5rem;
+
+    .contact {
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1rem;
+
+      a {
+        .icon-content {
+          width: 2.5rem;
+          height: 2.5rem;
+          padding: .4rem;
+          border: .2rem solid #263851;
+          border-radius: 100%;
+
+          &.instagram {
+            padding: .2rem;
+          }
+
+          svg {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    .footer-bottom {
+      flex-direction: column-reverse;
+      padding: .5rem;
+      gap: .8rem;
+    }
+  }
+}
+
+/* ==============================
+   LAPTOP
+================================= */
+
+@include bp.laptop {
+  footer {
+    gap: 1rem;
+    padding: 1rem;
+
+    h3 {
+      font-size: 1.2rem;
+    }
+
+    .contact {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+
+      a {
+        position: relative;
+        padding: .5rem;
+
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: .2rem;
+          z-index: -1;
+          border-radius: 2px;
+          background: c.$accent;
+          transition: height ease .3s;
+        }
+
+        &:hover {
+          &::before {
+            height: 100%;
+          }
+
+          .icon-content {
+            svg {
+              fill: c.$color;
+            }
+          }
+        }
+
+        .icon-content {
+          width: 1.5rem;
+          height: 2rem;
+
+          svg {
+            transition: all ease .3s;
+          }
+        }
+      }
+    }
+
+    .footer-bottom {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      height: 3rem;
+      gap: .5rem;
+
+      .legal-links {
+        gap: 2rem;
+      }
+    }
+  }
+}

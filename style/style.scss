@@ -1,5 +1,5 @@
 ﻿@use "reset";
-@use "variables" as v;
+@use "variables" as c;
 @use "breakpoint" as bp;
 @use 'banner';
 @use 'confidentialiter';
@@ -13,10 +13,11 @@
 @use 'header';
 
 body{
-  background: v.$background;
-  color: v.$color;
+  background: c.$background;
+  color: c.$color;
   font-size: 15px;
   line-height: 1.55;
+  padding: .5rem;
 }
 
 img{
@@ -26,4 +27,8 @@ img{
 a:focus-visible, button:focus-visible{
   outline: 3px solid white;
   outline-offset: 5px;
+}
+
+header{
+  display: none;
 }
