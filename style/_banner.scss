@@ -5,12 +5,128 @@
    COMMUN
 ================================= */
 
+#banner {
+  .banner-content {
+    .logo-and-title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .values {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+
+      li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: .5rem;
+        letter-spacing: .1rem;
+      }
+
+      .icon-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
 
 /* ==============================
    MOBILE
 ================================= */
 
+@include bp.mobile {
+  #banner {
+    .banner-content {
+      .logo-and-title {
+        h2 {
+          font-size: .7rem;
+        }
+      }
+
+      .values {
+        align-items: center;
+        margin-top: .2rem;
+
+        li {
+          font-size: .5rem;
+        }
+
+        .icon-content {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+    }
+
+    .banner-image {
+      display: none;
+    }
+  }
+}
 
 /* ==============================
    LAPTOP
 ================================= */
+
+@include bp.laptop {
+  #banner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    flex: 1 0 auto;
+    width: 100%;
+    gap: 0;
+    align-items: stretch;
+
+    .banner-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+
+      .logo-and-title {
+        .banner-logo {
+          width: 50%;
+        }
+
+        h2 {
+          padding: .5rem 0;
+          text-align: center;
+          font-size: 1.5rem;
+        }
+      }
+
+      .values {
+        padding: .5rem 0;
+
+        .icon-content {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+    }
+
+    .banner-image {
+      position: relative;
+      min-width: 0;
+      width: 75%;
+      overflow: hidden;
+      border-radius: 5rem;
+
+      img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: right 10%;
+        filter: grayscale(100%) contrast(1.2) brightness(0.8);
+      }
+    }
+  }
+}

@@ -1,8 +1,0 @@
-// Compatibilité uniquement : modifier les deux fichiers séparés.
-@use 'sass:meta';
-@media (width < 900px) {
-  @include meta.load-css('style-mobile');
-}
-@media (min-width: 900px) {
-  @include meta.load-css('style-laptop');
-}
