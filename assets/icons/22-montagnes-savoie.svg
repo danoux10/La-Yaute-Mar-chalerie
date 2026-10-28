@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Savoie — pictogramme de montagnes">
-  <title>Savoie — pictogramme de montagnes</title>
-  
   <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
     <path d="M5 78 30 39 41 55 59 23 92 78" stroke-width="4.4"/>
     <path d="m20 55 10-16 8 14M50 40l9-17 12 27-12-8-6 8" stroke-width="3"/>
