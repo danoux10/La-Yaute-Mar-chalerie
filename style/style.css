@@ -633,10 +633,6 @@ footer {
   flex-shrink: 0;
 }
 
-.hidden {
-  display: none;
-}
-
 .uppercase {
   text-transform: uppercase;
 }
@@ -652,6 +648,10 @@ img {
 a:focus-visible, button:focus-visible {
   outline: 3px solid white;
   outline-offset: 5px;
+}
+
+#banner {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,717 @@
+@charset "UTF-8";
+/* La Yaute Maréchalerie — présentation avec photographie à gauche
+   Basé sur index(4).html et laptop(4).scss.
+   Les chemins des images ont été conservés : garde ton dossier assets/ existant. */
+:root {
+  --background: #020817;
+  --color: #c7d1e6;
+  --accent: #0857ff;
+  --border: #263851;
+  --paper: #f4f0ea;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+img, svg {
+  max-width: 100%;
+}
+
+img {
+  display: block;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  padding: 0.5rem;
+  background: var(--background);
+  color: var(--color);
+  font-size: 15px;
+  line-height: 1.55;
+  overflow: hidden;
+}
+
+/* Hiérarchie générale des tailles */
+h1 {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+}
+
+h2 {
+  font-size: clamp(1.75rem, 2.5vw, 2rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 2vw, 1.75rem);
+}
+
+h4 {
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+}
+
+h5 {
+  font-size: clamp(1.125rem, 1.5vw, 1.25rem);
+}
+
+h6 {
+  font-size: clamp(1rem, 1.3vw, 1.125rem);
+}
+
+p {
+  font-size: clamp(0.875rem, 1.2vw, 1rem);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.bold {
+  font-weight: 700;
+}
+
+a:focus-visible, button:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 5px;
+}
+
+header, footer {
+  flex-shrink: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Barre de navigation existante */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 0.2rem solid var(--border);
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header .brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8rem;
+  height: 8rem;
+}
+
+header .menu-toggle {
+  display: none;
+}
+
+header #menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 65%;
+}
+
+header #menu .navbar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  padding: 0.5rem;
+  transition: color 0.3s;
+}
+
+header #menu .nav-text::first-letter {
+  text-transform: uppercase;
+}
+
+header #menu .nav-icon {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+header #menu .navbar-link::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s;
+}
+
+header #menu .navbar-link:hover {
+  color: var(--accent);
+}
+
+header #menu .navbar-link:hover::before, header #menu .navbar-link.active::before {
+  width: 100%;
+}
+
+header #menu .navbar-link.active {
+  font-weight: 700;
+}
+
+/* Bandeau d'accueil (structure d'origine conservée) */
+#banner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  width: 100%;
+  min-height: 42rem;
+  gap: 0;
+  align-items: stretch;
+}
+
+#banner .banner-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+#banner .logo-and-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#banner .banner-logo {
+  width: 50%;
+}
+
+#banner h2 {
+  font-size: 1.5rem;
+  padding: 0.5rem 0;
+  text-align: center;
+}
+
+#banner .values {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  padding: 0.5rem 0;
+}
+
+#banner .values li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: 0.1rem;
+}
+
+#banner .values .icon-content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+}
+
+#banner .banner-image {
+  position: relative;
+  width: 75%;
+  overflow: hidden;
+  border-radius: 5rem;
+}
+
+#banner .banner-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right 10%;
+  filter: grayscale(100%) contrast(1.2) brightness(0.8);
+}
+
+/* ———————————————————————————
+   PRESENTATION : IMAGE À GAUCHE
+   ——————————————————————————— */
+#presentation {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100%;
+  min-height: clamp(44rem, 88dvh, 62rem);
+  background: var(--background);
+}
+
+/* La photo déborde vers le centre, puis s'efface sous le texte. */
+#presentation .presentation-image {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 67%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+#presentation .presentation-image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+#presentation .presentation-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to right, rgba(2, 8, 23, 0) 28%, rgba(2, 8, 23, 0.16) 55%, rgba(2, 8, 23, 0.84) 86%, var(--background) 100%), linear-gradient(to top, rgba(2, 8, 23, 0.46) 0%, rgba(2, 8, 23, 0) 28%, rgba(2, 8, 23, 0) 75%, rgba(2, 8, 23, 0.2) 100%);
+}
+
+/* Colonne de texte à droite */
+#presentation .presentation-container {
+  position: relative;
+  z-index: 1;
+  grid-column: 2;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: clamp(1.5rem, 3vw, 2.6rem);
+  padding: clamp(2rem, 3.5vw, 4rem) clamp(1.5rem, 3vw, 3.5rem);
+}
+
+#presentation .presentation-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(0.85rem, 1.4vw, 1.2rem);
+  min-width: 0;
+}
+
+/* Petit titre de rubrique avec point et trait bleu */
+#presentation .title-section {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: fit-content;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+}
+
+#presentation .title-section::before {
+  content: "";
+  flex: 0 0 0.28rem;
+  width: 0.28rem;
+  height: 0.28rem;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+#presentation .title-section::after {
+  content: "";
+  flex: 0 0 4rem;
+  height: 0.11rem;
+  background: var(--accent);
+}
+
+/* Grand titre sur deux lignes comme sur la référence */
+#presentation h1 {
+  margin-top: clamp(0.4rem, 1vw, 0.8rem);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.15rem, 5.2vw, 5.8rem);
+  font-weight: 700;
+  line-height: 0.99;
+  letter-spacing: -0.052em;
+  color: var(--color);
+}
+
+#presentation h1 .accent {
+  display: block;
+}
+
+#presentation .subtitle-section {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 0.25rem;
+  font-size: clamp(0.67rem, 0.75vw, 0.83rem);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  line-height: 1.6;
+}
+
+#presentation .subtitle-section::after {
+  content: "";
+  flex: 0 0 2.8rem;
+  height: 0.11rem;
+  background: var(--accent);
+}
+
+#presentation .presentation-content > p:not(.title-section) {
+  max-width: 52ch;
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  line-height: 1.7;
+  color: #bcc7da;
+}
+
+#presentation .presentation-content > p:not(.title-section) + p {
+  margin-top: clamp(0.4rem, 1.5vw, 1rem);
+}
+
+/* Cartes compactes : leur largeur suit le contenu */
+#presentation .cards-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-self: flex-start;
+  gap: 0.65rem;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: clamp(0.55rem, 1.4vw, 1rem);
+  padding-top: 0.55rem;
+  border-top: 0.125rem solid var(--border);
+}
+
+#presentation .card-presentation {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  padding: 0.34rem;
+  border: 0.125rem solid var(--border);
+  border-radius: 0.5rem;
+  background: rgba(9, 20, 42, 0.57);
+}
+
+#presentation .card-presentation .image-content {
+  flex: 0 0 3.4rem;
+  width: 3.4rem;
+  height: 4.45rem;
+}
+
+#presentation .card-presentation .image-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.3rem;
+}
+
+#presentation .card-presentation .text-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+#presentation .card-presentation .text-card p {
+  font-size: 0.69rem;
+  white-space: nowrap;
+}
+
+#presentation .card-presentation .title-card {
+  font-weight: 700;
+}
+
+#presentation .card-presentation .subtitle-card::first-letter {
+  text-transform: uppercase;
+}
+
+/* Papier déchiré par-dessus la photo à gauche */
+#presentation .presentation-explication {
+  --paper-overlap: clamp(2.5rem, 9vw, 9rem);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: clamp(0.65rem, 1.5vw, 1.2rem);
+  align-self: flex-start;
+  width: calc(100% + var(--paper-overlap));
+  max-width: none;
+  margin-left: calc(-1 * var(--paper-overlap));
+  padding: clamp(1rem, 2vw, 1.55rem);
+  background: var(--paper);
+  color: #101827;
+  clip-path: polygon(0% 2%, 3% 1%, 5% 3%, 8% 1%, 12% 2%, 15% 0%, 19% 2%, 23% 1%, 27% 3%, 31% 1%, 35% 2%, 40% 0%, 45% 2%, 50% 1%, 55% 3%, 60% 1%, 65% 2%, 70% 0%, 75% 2%, 80% 1%, 85% 3%, 90% 1%, 95% 2%, 100% 1%, 100% 98%, 97% 100%, 93% 97%, 89% 99%, 85% 97%, 81% 100%, 76% 98%, 72% 100%, 68% 97%, 63% 99%, 58% 97%, 54% 100%, 49% 98%, 44% 100%, 39% 97%, 34% 99%, 29% 97%, 24% 100%, 19% 98%, 14% 100%, 9% 97%, 5% 99%, 0% 98%);
+}
+
+#presentation .presentation-explication .icon-content {
+  display: block;
+  flex: 0 0 32%;
+  max-width: 11rem;
+  min-width: 5rem;
+  color: #09203b;
+}
+
+#presentation .presentation-explication .icon-content svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+#presentation .presentation-explication .icon-content .forest {
+  color: #75817e;
+}
+
+#presentation .explication-content {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+#presentation .explication-content h3 {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  font-size: clamp(0.85rem, 1.1vw, 1.15rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.3;
+}
+
+#presentation .explication-content h3::after {
+  content: "";
+  width: 2.5rem;
+  height: 0.125rem;
+  background: var(--accent);
+}
+
+#presentation .explication-content p {
+  margin-top: 0.8rem;
+  color: #222d3c;
+  font-size: clamp(0.8rem, 0.95vw, 0.95rem);
+  line-height: 1.6;
+}
+
+/* Autres sections conservées telles qu'elles apparaissent dans ton HTML.
+   Leur mise en forme spécifique peut rester dans tes autres partiels SCSS. */
+main > section:not(#banner):not(#presentation) {
+  width: 100%;
+  min-height: 22rem;
+  padding: 2rem;
+}
+
+/* Pied de page existant */
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  border: 0.2rem solid var(--border);
+  border-radius: 0.5rem;
+}
+
+footer h3 {
+  position: relative;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+footer h3::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  width: 5rem;
+  height: 0.2rem;
+  background: var(--accent);
+}
+
+footer .contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-style: normal;
+}
+
+footer .contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-bottom: 0.15rem solid var(--accent);
+}
+
+footer .contact .icon-content {
+  display: inline-flex;
+  align-items: center;
+  width: 1.5rem;
+  height: 2rem;
+  color: var(--accent);
+}
+
+footer .contact .icon-content svg {
+  fill: currentColor;
+}
+
+footer .footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding-top: 0.75rem;
+  border-top: 0.2rem solid var(--border);
+}
+
+footer .legal-links {
+  display: flex;
+  gap: 2rem;
+}
+
+footer .legal-links a {
+  text-decoration: underline;
+}
+
+/* Variante autonome : presentation.html montre uniquement la section présentation. */
+body.preview-page {
+  min-height: 100dvh;
+  height: auto;
+  padding: 0;
+  overflow: auto;
+}
+
+body.preview-page main {
+  display: block;
+  flex: none;
+  overflow: visible;
+}
+
+body.preview-page #presentation {
+  min-height: 100dvh;
+}
+
+/* Responsive : image en haut, contenu au-dessous sur petit écran */
+@media (max-width: 950px) {
+  #presentation {
+    display: flex;
+    flex-direction: column;
+    min-height: auto;
+  }
+  #presentation .presentation-image {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: clamp(16rem, 48vw, 28rem);
+  }
+  #presentation .presentation-image::after {
+    background: linear-gradient(to bottom, transparent 42%, var(--background) 100%);
+  }
+  #presentation .presentation-container {
+    width: 100%;
+    margin-top: -3rem;
+    padding: 1.5rem clamp(1rem, 4vw, 2.5rem) 3rem;
+  }
+  #presentation h1 {
+    font-size: clamp(2.8rem, 8vw, 5rem);
+  }
+  #presentation .presentation-explication {
+    --paper-overlap: 0rem;
+    width: 100%;
+    margin-left: 0;
+  }
+  header #menu {
+    width: auto;
+    flex-wrap: wrap;
+  }
+  header .brand {
+    width: 5rem;
+    height: 5rem;
+  }
+  #banner {
+    min-height: 27rem;
+  }
+}
+@media (max-width: 560px) {
+  #presentation .presentation-container {
+    margin-top: -1.5rem;
+  }
+  #presentation .presentation-content {
+    gap: 0.8rem;
+  }
+  #presentation .title-section::after {
+    flex-basis: 2rem;
+  }
+  #presentation .presentation-explication {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #presentation .presentation-explication .icon-content {
+    width: 9rem;
+    max-width: 50%;
+  }
+  #presentation .cards-content {
+    gap: 0.5rem;
+  }
+  #presentation .card-presentation .image-content {
+    flex-basis: 2.75rem;
+    width: 2.75rem;
+    height: 3.5rem;
+  }
+  #banner {
+    grid-template-columns: 1fr;
+  }
+  #banner .banner-image {
+    min-height: 18rem;
+    width: 100%;
+  }
+  footer .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  header {
+    flex-wrap: wrap;
+  }
+  header #menu {
+    width: 100%;
+  }
+}
+
+/*# sourceMappingURL=presentation.css.map */
