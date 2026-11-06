@@ -4,11 +4,17 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Parage équin à Viuz-en-Sallaz (74) | La Yaute Maréchalerie</title>
+<!--Référencement naturel -->
 	<meta name="description" content="Cindy Piccot Ladrey, maréchale-ferrante à Viuz-en-Sallaz, propose le parage des chevaux, ânes et mulets en Haute-Savoie, en Savoie et dans l’Ain. Tarif sur devis.">
+<!---->
 	<link rel="shortcut icon" href="assets/icons/favicon-la-yaute.svg" type="image/svg+xml">
 <!--	<link rel="stylesheet" href="style/style.css">-->
-	<link rel="stylesheet" href="style/laptop.css">
+<!--	<link rel="stylesheet" href="style/laptop.css">-->
+	<link rel="stylesheet" href="style/mobile.css">
 	<script src="script/navbar-toggle.js" defer></script>
+	<script src="script/navbar-active.js" defer></script>
+
+<!--Référencement naturel -->
 	<script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
@@ -22,7 +28,7 @@
 	</script>
 </head>
 <body>
-<header>
+<header >
 	<a class="brand" href="#banner">
 		<img src="assets/icons/la-yaute-marechalerie-logo-pro-blanc.svg" alt="La Yaute Maréchalerie">
 	</a>
@@ -76,6 +82,17 @@
 			</span>
 		</a>
 
+		<a href="#a_propos" class="navbar-link">
+			<span class="nav-icon">
+				<svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2026 Fonticons, Inc. --><path
+					fill="currentColor"
+					d="M224 248a120 120 0 1 1 0-240 120 120 0 1 1 0 240zm-30.5 56l61 0c9.7 0 17.5 7.8 17.5 17.5 0 4.2-1.5 8.2-4.2 11.4l-27.4 32 31 115.1 .6 0 34.6-138.5c2.2-8.7 11.1-14 19.5-10.8 61.9 23.6 105.9 83.6 105.9 153.8 0 15.1-12.3 27.4-27.4 27.4L43.4 512c-15.1 0-27.4-12.3-27.4-27.4 0-70.2 44-130.2 105.9-153.8 8.4-3.2 17.3 2.1 19.5 10.8l34.6 138.5 .6 0 31-115.1-27.4-32c-2.7-3.2-4.2-7.2-4.2-11.4 0-9.7 7.8-17.5 17.5-17.5z"/></svg>
+			</span>
+			<span class="nav-text">
+				à propos
+			</span>
+		</a>
+
 		<a href="#zone_intervention" class="navbar-link">
 			<span class="nav-icon">
 				<svg class="nav-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg"
@@ -85,17 +102,6 @@
 			</span>
 			<span class="nav-text">
 				zone d'intervention
-			</span>
-		</a>
-
-		<a href="#a_propos" class="navbar-link">
-			<span class="nav-icon">
-				<svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2026 Fonticons, Inc. --><path
-					fill="currentColor"
-					d="M224 248a120 120 0 1 1 0-240 120 120 0 1 1 0 240zm-30.5 56l61 0c9.7 0 17.5 7.8 17.5 17.5 0 4.2-1.5 8.2-4.2 11.4l-27.4 32 31 115.1 .6 0 34.6-138.5c2.2-8.7 11.1-14 19.5-10.8 61.9 23.6 105.9 83.6 105.9 153.8 0 15.1-12.3 27.4-27.4 27.4L43.4 512c-15.1 0-27.4-12.3-27.4-27.4 0-70.2 44-130.2 105.9-153.8 8.4-3.2 17.3 2.1 19.5 10.8l34.6 138.5 .6 0 31-115.1-27.4-32c-2.7-3.2-4.2-7.2-4.2-11.4 0-9.7 7.8-17.5 17.5-17.5z"/></svg>
-			</span>
-			<span class="nav-text">
-				à propos
 			</span>
 		</a>
 
@@ -115,14 +121,18 @@
 
 <main>
 	<!--start banner-->
-	<section id="banner">
+	<section id="banner" >
 		<div class="banner-content">
 			<div class="logo-and-title">
+				<p class="banner-eyebrow">Maréchalerie itinérante</p>
+				<p class="banner-title">La Yaute <span class="accent">Maréchalerie</span></p>
 				<div class="banner-logo">
 					<img src="assets/icons/la-yaute-marechalerie-logo-pro-blanc.svg" alt="La Yaute Maréchalerie">
 				</div>
 				<h2 class="uppercase">Parage de chevaux, ânes et mulets</h2>
 			</div>
+			<p class="banner-location">Haute-Savoie · Savoie · Ain</p>
+			<a class="banner-cta" href="#prestation">Découvrir les prestations <span aria-hidden="true">→</span></a>
 			<ul class="values">
 				<li>
 					<span class="icon-content">
@@ -166,7 +176,7 @@
 	<!--end banner-->
 
 	<!--start présentation-->
-	<section id="presentation" aria-labelledby="presentation-title">
+	<section id="presentation"  aria-labelledby="presentation-title">
 		<aside class="presentation-image">
 			<img src="assets/images/Trois%20équidés%20·%20panorama.webp" loading="lazy" alt="Trois équidés en panorama">
 		</aside>
@@ -254,8 +264,8 @@
 	</section>
 	<!--end présentation-->
 
-	<!--start prestations-->
-	<section id="prestation" aria-labelledby="prestation-title">
+	<!--start préstations-->
+	<section id="prestation"  aria-labelledby="prestation-title">
     <!-- Photo de parage à droite, fondue dans le fond sombre -->
     <div class="prestation-image">
         <img src="assets/images/Parage%20·%20travail%20sur%20un%20sabot.webp" alt="Maréchale-ferrante en train de travailler sur un sabot" loading="lazy">
@@ -325,44 +335,85 @@
 	<!--end prestations-->
 
 	<!--start a propos-->
-	<section id="a_propos" >
-		<aside>
-			<img src="assets/images/01_cindy_au_travail.jpg" loading="lazy" alt="Cindy Piccot Ladrey au travail">
-			<img src="assets/images/02_portrait_cindy.jpg" loading="lazy" alt="Portrait de Cindy Piccot Ladrey">
-		</aside>
-		<article>
-			<h2 class="title-section">À propos</h2>
-			<h3 class="subtitle-section">Une passion <span class="accent">au service des équidés</span></h3>
-			<p>
-				Je m’appelle <span class="bold">Cindy Piccot Ladrey</span>, maréchale-ferrante titulaire d’un CAP maréchal-ferrant, obtenu après quatre années de formation en apprentissage au lycée agricole de Contamine-sur-Arve.
-			</p>
-			<p>
-				Sérieuse, calme et très motivée, je travaille de manière autonome et m’adapte à chaque situation. Mon objectif est de proposer un travail soigné, dans le respect de chaque animal et de ses besoins.
-			</p>
-			<p>
-				À travers <span class="bold">La Yaute Maréchalerie</span>, je mets ma passion et mes compétences au service du bien-être des chevaux, ânes et mulets, en privilégiant une approche respectueuse et adaptée à chaque équidé.
-			</p>
-			<aside class="qualifications">
-				<div class="card-qualification">
-					<span class="icon-content">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2026 Fonticons, Inc. --><path fill="currentColor" d="M48 195.8l209.2 86.1c9.8 4 20.2 6.1 30.8 6.1s21-2.1 30.8-6.1l242.4-99.8c9-3.7 14.8-12.4 14.8-22.1s-5.8-18.4-14.8-22.1L318.8 38.1C309 34.1 298.6 32 288 32s-21 2.1-30.8 6.1L14.8 137.9C5.8 141.6 0 150.3 0 160L0 456c0 13.3 10.7 24 24 24s24-10.7 24-24l0-260.2zm48 71.7L96 384c0 53 86 96 192 96s192-43 192-96l0-116.6-142.9 58.9c-15.6 6.4-32.2 9.7-49.1 9.7s-33.5-3.3-49.1-9.7L96 267.4z"/></svg>
-					</span>
-					<p class="title-card">Diplômée du <span class="uppercase">cap</span></p>
-				</div>
-				<div class="card-qualification">
-					<span class="icon-content">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2026 Fonticons, Inc. --><path fill="currentColor" d="M192 80c0-26.5 21.5-48 48-48l32 0c26.5 0 48 21.5 48 48l0 352c0 26.5-21.5 48-48 48l-32 0c-26.5 0-48-21.5-48-48l0-352zM0 272c0-26.5 21.5-48 48-48l32 0c26.5 0 48 21.5 48 48l0 160c0 26.5-21.5 48-48 48l-32 0c-26.5 0-48-21.5-48-48L0 272zM432 96l32 0c26.5 0 48 21.5 48 48l0 288c0 26.5-21.5 48-48 48l-32 0c-26.5 0-48-21.5-48-48l0-288c0-26.5 21.5-48 48-48z"/></svg>
-					</span>
-					<p class="title-card">Plus de 4 ans d’expérience</p>
-				</div>
-				<div class="card-qualification">
-					<span class="icon-content">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2026 Fonticons, Inc. --><path fill="currentColor" d="M241 87.1l15 20.7 15-20.7C296 52.5 336.2 32 378.9 32 452.4 32 512 91.6 512 165.1l0 2.6c0 112.2-139.9 242.5-212.9 298.2-12.4 9.4-27.6 14.1-43.1 14.1s-30.8-4.6-43.1-14.1C139.9 410.2 0 279.9 0 167.7l0-2.6C0 91.6 59.6 32 133.1 32 175.8 32 216 52.5 241 87.1z"/></svg>
-					</span>
-					<p>Calme & motivée</p>
-				</div>
-			</aside>
-		</article>
+	<section id="a_propos"  aria-labelledby="a-propos-title">
+
+		<div class="about-content">
+
+			<p class="about-eyebrow">À propos</p>
+
+			<h2 id="a-propos-title" class="about-title">
+				Une passion
+				<span class="accent">au service des équidés</span>
+			</h2>
+
+			<div class="about-description">
+				<p>
+					Je m’appelle <span class="bold">Cindy Piccot Ladrey</span>,
+					maréchale-ferrante titulaire d’un CAP maréchal-ferrant,
+					obtenu après quatre années de formation en apprentissage
+					au lycée agricole de Contamine-sur-Arve.
+				</p>
+
+				<p>
+					Sérieuse, calme et très motivée, je travaille de manière
+					autonome et m’adapte à chaque situation. Mon objectif est
+					de proposer un travail soigné, dans le respect de chaque
+					animal et de ses besoins.
+				</p>
+
+				<p>
+					À travers <span class="bold">La Yaute Maréchalerie</span>,
+					je mets ma passion et mes compétences au service du
+					bien-être des chevaux, ânes et mulets, en privilégiant
+					une approche respectueuse et adaptée à chaque équidé.
+				</p>
+			</div>
+
+			<ul class="about-qualifications" aria-label="Qualifications et qualités">
+
+				<li class="about-qualification">
+					<svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+						<path d="M4 18 24 7l20 11-20 11L4 18Z"/>
+						<path d="M12 23v12c6.5 5 17.5 5 24 0V23M43 18v16"/>
+					</svg>
+					<p>Diplômée<br>du CAP</p>
+				</li>
+
+				<li class="about-qualification">
+					<svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+						<path d="M7 41V27h7v14M20 41V10h7v31M33 41V20h7v21"/>
+					</svg>
+					<p>4 ans<br>d’expérience</p>
+				</li>
+
+				<li class="about-qualification">
+					<svg viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+						<path d="M24 42S4 29.5 4 16a11 11 0 0 1 20-6 11 11 0 0 1 20 6c0 13.5-20 26-20 26Z"/>
+					</svg>
+					<p>Sérieuse, calme<br>et motivée</p>
+				</li>
+
+			</ul>
+		</div>
+
+		<div class="about-photos">
+
+			<img
+				class="about-photo-work"
+				src="assets/images/01_cindy_au_travail.jpg"
+				alt="Cindy Piccot Ladrey au travail auprès d’un équidé"
+				loading="lazy"
+			>
+
+			<img
+				class="about-photo-portrait"
+				src="assets/images/02_portrait_cindy.jpg"
+				alt="Portrait de Cindy Piccot Ladrey"
+				loading="lazy"
+			>
+
+		</div>
+
 	</section>
 	<!--end a propos -->
 
@@ -370,7 +421,7 @@
 	<section id="zone_intervention" aria-labelledby="zone-title">
 		<!-- Photographie extraite de la zone sans texte du visuel de référence -->
 		<div class="zone-image" aria-hidden="true">
-			<img src="assets/images/Cheval%20·%20paysage%20alpin.webp" alt="" loading="lazy">
+			<img src="assets/images/Cheval%20·%20paysage%20alpin.png" alt="" loading="lazy">
 		</div>
 
 		<div class="zone-content">
@@ -445,7 +496,7 @@
 	<!--end galerie -->
 </main>
 
-<footer>
+<footer >
 	<h3>Nous contacter</h3>
 	<address class="contact">
 		<a href="tel:+33637743380">
