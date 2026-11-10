@@ -1,159 +1,156 @@
-@use "variables" as c;
-@use "breakpoint" as bp;
+// _header.scss
+// Navbar : logo, liens, hamburger et états du menu.
+// Les mixins navigation-mobile et navigation-laptop utilisent le seuil de 1024 px.
+// script/navbar-toggle.js pilote .is-open et aria-expanded.
+// Le bouton de fond et son emplacement sont définis dans _background.scss.
 
-/* ==============================
-   COMMUN
-================================= */
+@use 'variables' as c;
+
+@use 'breakpoint' as bp;
+
+// Commun au mobile et au laptop.
 
 header {
-  display: flex;
-  flex-direction: row;
-
-  #menu {
-    .navbar-link {
-      display: flex;
-      flex-direction: row;
-      gap: .5rem;
-      padding: .5rem;
-
-      .nav-text {
-        &::first-letter {
-          text-transform: uppercase;
-        }
-      }
-
-      &.active {
-        font-weight: bold;
-      }
-    }
+  &,
+  #menu .navbar-link {
+    display: flex;
+    align-items: center;
   }
 }
 
-/* ==============================
-   MOBILE
-================================= */
+// Navigation mobile et tablette : en dessous de 1024 px.
 
-@include bp.mobile {
+@include bp.navigation-mobile {
   header {
     position: relative;
+    z-index: 10;
     justify-content: space-between;
-    padding: .5rem;
-    border-bottom: .06rem solid #263851;
+    min-height: 78px;
+    padding: 8px 22px;
+    border-bottom: 1px solid c.$border;
 
     .brand {
-      flex-shrink: 0;
-      width: 6.75rem;
+      width: 105px;
     }
 
     .menu-toggle {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
+      gap: 20px;
+      border: 0;
       background: none;
-      border: none;
+    }
 
-      .menu-label {
-        letter-spacing: .25rem;
-      }
+    .menu-toggle .menu-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+    }
 
-      .menu-symbol {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 2.625rem;
-        height: 2.75rem;
-        background: #0e192e;
-        border-radius: .5rem;
+    .menu-toggle .menu-symbol {
+      position: relative;
+      width: 44px;
+      height: 44px;
+      border-radius: 9px;
+      background: c.$card-background;
+    }
 
-        .toggle-bar {
-          position: absolute;
-          top: 1.3rem;
-          left: .65rem;
-          width: 1.37rem;
-          height: .125rem;
-          background: currentColor;
-          border-radius: .5rem;
-          transition: transform 250ms ease, opacity 250ms ease;
+    // Traits décalés ensuite pour former le hamburger.
+    .menu-toggle .toggle-bar {
+      position: absolute;
+      top: 21px;
+      left: 13px;
+      width: 18px;
+      height: 2px;
+      background: currentColor;
+    }
 
-          &:nth-child(1) {
-            transform: translateY(-.5rem);
-          }
+    .menu-toggle .toggle-bar:first-child {
+      transform: translateY(-6px);
+    }
 
-          &:nth-child(3) {
-            transform: translateY(.5rem);
-          }
-        }
-      }
+    .menu-toggle .toggle-bar:last-child {
+      transform: translateY(6px);
+    }
 
-      &[aria-expanded="true"] {
-        .toggle-bar {
-          &:nth-child(1) {
-            transform: rotate(45deg);
-          }
+    // Transforme les traits en croix lorsque le menu est ouvert.
+    .menu-toggle[aria-expanded=true] .toggle-bar:first-child {
+      transform: rotate(45deg);
+    }
 
-          &:nth-child(2) {
-            opacity: 0;
-            transform: scaleX(0);
-          }
+    .menu-toggle[aria-expanded=true] .toggle-bar:nth-child(2) {
+      opacity: 0;
+    }
 
-          &:nth-child(3) {
-            transform: rotate(-45deg);
-          }
-        }
-      }
+    .menu-toggle[aria-expanded=true] .toggle-bar:last-child {
+      transform: rotate(-45deg);
     }
 
     #menu {
       position: absolute;
-      z-index: 10;
-      top: 100%;
-      left: 0;
-      right: 0;
+      inset: 100% 0 auto;
       display: none;
-      flex-direction: column;
-      gap: .5rem;
-      padding: .5rem;
-      background: #08111e;
+      padding: 12px 22px;
+      background: c.$card-background;
+      border-bottom: 1px solid c.$border;
+      max-height: min(70dvh, 32rem);
+      // Permet de défiler lorsque le contenu dépasse la hauteur disponible.
+      overflow-y: auto;
+    }
 
-      &.is-open {
-        display: flex;
-      }
+    // État ouvert du menu déroulant, activé par le JavaScript.
+    #menu.is-open {
+      display: grid;
+    }
 
-      .navbar-link {
-        font-size: .8rem;
+    #menu .navbar-link {
+      gap: 12px;
+      min-height: 44px;
+      padding: 8px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
 
-        &.active {
-          border: .06rem solid #123274;
-          background: #081b44;
-          border-radius: .5rem;
-        }
+    #menu .navbar-link.active {
+      color: white;
+      background: c.$accent;
+    }
 
-        .nav-icon {
-          display: inline-flex;
-          width: 1.125rem;
-          height: 1.125rem;
-        }
-      }
+    #menu .nav-icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    #menu .nav-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    #menu .nav-text::first-letter {
+      text-transform: uppercase;
     }
   }
 }
 
-/* ==============================
-   LAPTOP
-================================= */
+// Navigation laptop : à partir de 1024 px.
 
-@include bp.laptop {
+@include bp.navigation-laptop {
   header {
-    justify-content: space-around;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: clamp(1rem, 3vw, 3rem);
+    padding-inline: clamp(1rem, 2.5vw, 3rem);
+    border: 0.2rem solid c.$border;
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
 
     .brand {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 8rem;
-      height: 8rem;
+      width: 5.5rem;
+      height: 5.5rem;
+      flex-shrink: 0;
     }
 
     .menu-toggle {
@@ -163,59 +160,75 @@ header {
     #menu {
       display: flex;
       flex-direction: row;
+      flex-wrap: nowrap;
       justify-content: space-around;
       align-items: center;
-      width: 50%;
+      flex: 1 1 auto;
+      min-width: 0;
+      max-width: 70rem;
+      margin-left: auto;
+    }
 
-      .navbar-link {
-        position: relative;
-        justify-content: space-around;
-        align-items: center;
-        transition: all ease .5s;
+    #menu .navbar-link {
+      flex-direction: row;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      white-space: nowrap;
+      position: relative;
+      // Garde les calques de cette section dans leur propre contexte de superposition.
+      isolation: isolate;
+      justify-content: space-around;
+      transition: all ease 0.5s;
+    }
 
-        .nav-icon {
-          width: 1.5rem;
-          height: 1.5rem;
-        }
+    #menu .navbar-link .nav-text::first-letter {
+      text-transform: uppercase;
+    }
 
-        &::before {
-          content: '';
-          position: absolute;
-          z-index: -1;
-          width: 0;
-          height: 2px;
-          bottom: 0;
-          left: 0;
-          background-color: c.$accent;
-          transition: width .5s ease;
-        }
+    #menu .navbar-link .nav-icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      flex-shrink: 0;
+    }
 
-        &:hover {
-          color: c.$accent;
+    #menu .navbar-link::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: c.$accent;
+      transition: width 0.5s ease;
+    }
 
-          &::before {
-            width: 100%;
-          }
-        }
+    #menu .navbar-link:hover {
+      color: c.$accent;
+    }
 
-        &.active {
-          &::before {
-            width: 100%;
-            height: 100%;
-            border-radius: 5%;
-            transition: height ease .5s;
-          }
+    #menu .navbar-link:hover::before {
+      width: 100%;
+    }
 
-          &:hover {
-            color: c.$color;
+    #menu .navbar-link.active {
+      font-weight: bold;
+    }
 
-            &::before {
-              width: 100%;
-              height: 2px;
-            }
-          }
-        }
-      }
+    #menu .navbar-link.active::before {
+      width: 100%;
+      height: 100%;
+      border-radius: 5%;
+      transition: height ease 0.5s;
+    }
+
+    #menu .navbar-link.active:hover {
+      color: c.$color;
+    }
+
+    #menu .navbar-link.active:hover::before {
+      width: 100%;
+      height: 2px;
     }
   }
 }

@@ -1,16 +1,372 @@
-@use "variables" as c;
-@use "breakpoint" as bp;
+// _prestation.scss
+// Prestations : parage, portraits des équidés et informations pratiques.
+// Mobile : photo intercalée entre les textes. Laptop : photo derrière le contenu.
 
-/* ==============================
-   COMMUN
-================================= */
+@use 'variables' as c;
 
+@use 'breakpoint' as bp;
 
-/* ==============================
-   MOBILE
-================================= */
+// Commun au mobile et au laptop.
 
+#prestation {
+  display: grid;
 
-/* ==============================
-   LAPTOP
-================================= */
+  .prestation-subtitle {
+    align-items: center;
+    text-transform: uppercase;
+  }
+
+  .prestation-subtitle::after {
+    content: "";
+    background: c.$accent;
+  }
+
+  .prestation-image img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .prestation-label {
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .prestation-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .prestation-info {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+// Mobile : jusqu’à 767 px.
+
+@include bp.mobile {
+  #prestation {
+    .prestation-container {
+      // Expose les enfants à la grille du parent sans changer le HTML.
+      display: contents;
+    }
+
+    .prestation-eyebrow {
+      order: 0;
+    }
+
+    .prestation-title {
+      order: 1;
+    }
+
+    .prestation-subtitle {
+      order: 2;
+      display: flex;
+      gap: 14px;
+      margin: 20px 0;
+      font-size: 11px;
+      letter-spacing: 0.17em;
+    }
+
+    .prestation-subtitle::after {
+      flex: 1;
+      height: 2px;
+    }
+
+    .prestation-description {
+      order: 3;
+    }
+
+    .prestation-image {
+      order: 4;
+      margin: 28px 0 18px;
+    }
+
+    .prestation-image img {
+      aspect-ratio: 1.7;
+      border-radius: 10px;
+    }
+
+    .prestation-label {
+      order: 5;
+      margin-bottom: 14px;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+    }
+
+    .prestation-cards {
+      order: 6;
+      gap: 12px;
+    }
+
+    .prestation-card {
+      min-width: 0;
+    }
+
+    .prestation-card img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border: 2px solid c.$accent;
+      border-radius: 50%;
+    }
+
+    .prestation-card .prestation-card-text {
+      margin-top: 10px;
+      padding: 10px 2px;
+      border-radius: 5px;
+      background: c.$accent;
+      text-align: center;
+    }
+
+    .prestation-card .prestation-card-title {
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .prestation-card .prestation-card-caption {
+      display: none;
+    }
+
+    .prestation-info {
+      order: 7;
+      gap: 8px 14px;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid c.$border;
+    }
+
+    .prestation-info p {
+      font-size: 11px;
+    }
+
+    .prestation-info svg {
+      display: none;
+    }
+  }
+}
+
+// Laptop : à partir de 768 px.
+
+@include bp.laptop {
+  #prestation {
+    position: relative;
+    // Garde les calques de cette section dans leur propre contexte de superposition.
+    isolation: isolate;
+    grid-template-columns: minmax(0, 57%) minmax(0, 43%);
+    align-items: stretch;
+    width: 100%;
+    min-height: clamp(39rem, 90dvh, 57rem);
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: c.$background;
+    border-bottom: 1px solid #223252;
+
+    .prestation-image {
+      position: absolute;
+      inset: 0 0 0 auto;
+      z-index: 0;
+      width: 71%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .prestation-image img {
+      display: block;
+      height: 100%;
+      object-position: center center;
+    }
+
+    .prestation-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      // Fond la photo dans le fond sombre pour préserver la lisibilité du texte.
+      background: linear-gradient(to right, c.$background 0%, rgba(0, 6, 23, 0.99) 10%, rgba(0, 6, 23, 0.9) 23%, rgba(0, 6, 23, 0.58) 49%, rgba(0, 6, 23, 0.13) 79%, rgba(0, 6, 23, 0.03) 100%), linear-gradient(to top, rgba(0, 6, 23, 0.82) 0%, rgba(0, 6, 23, 0.13) 26%, rgba(0, 6, 23, 0) 64%);
+    }
+
+    .prestation-container {
+      position: relative;
+      z-index: 1;
+      grid-column: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      width: 100%;
+      min-width: 0;
+      max-width: 51rem;
+      padding: clamp(2.75rem, 5.4vw, 5.2rem) clamp(1.4rem, 5.7vw, 5.3rem);
+    }
+
+    .prestation-container .prestation-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin: 0 0 clamp(2.2rem, 4.5vw, 4.4rem);
+      font-size: clamp(0.65rem, 0.8vw, 0.78rem);
+      font-weight: 700;
+      letter-spacing: 0.26em;
+      line-height: 1.4;
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: c.$color;
+    }
+
+    .prestation-container .prestation-eyebrow::after {
+      content: "";
+      display: block;
+      width: clamp(2.5rem, 6vw, 4.2rem);
+      height: 0.12rem;
+      background: c.$accent;
+    }
+
+    .prestation-container .prestation-title {
+      margin: 0 0 clamp(1.8rem, 3vw, 3rem);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.7rem, 4.7vw, 5.8rem);
+      font-weight: 700;
+      letter-spacing: -0.052em;
+      line-height: 1.06;
+      color: c.$color;
+    }
+
+    .prestation-container .prestation-title .accent {
+      color: c.$accent;
+    }
+
+    .prestation-container .prestation-subtitle {
+      display: inline-flex;
+      gap: 1rem;
+      margin: 0 0 clamp(1rem, 2.3vw, 2rem);
+      font-size: clamp(0.66rem, 0.85vw, 0.83rem);
+      font-weight: 600;
+      line-height: 1.5;
+      letter-spacing: 0.25em;
+      white-space: nowrap;
+      color: c.$color;
+    }
+
+    .prestation-container .prestation-subtitle::after {
+      display: block;
+      width: clamp(1.6rem, 5.3vw, 3.7rem);
+      height: 0.12rem;
+    }
+
+    .prestation-container .prestation-description {
+      max-width: 43ch;
+      margin: 0 0 clamp(1.4rem, 3.2vw, 2.9rem);
+      font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+      line-height: 1.75;
+      color: c.$color;
+    }
+
+    .prestation-container .prestation-label {
+      margin: 0 0 clamp(1.15rem, 2.5vw, 1.8rem);
+      font-size: clamp(0.64rem, 0.76vw, 0.73rem);
+      letter-spacing: 0.25em;
+      line-height: 1.45;
+      color: c.$color;
+    }
+
+    // Grille des catégories : chevaux, ânes et mulets.
+    .prestation-container .prestation-cards {
+      gap: clamp(0.65rem, 2vw, 1.6rem);
+      width: min(100%, 34rem);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .prestation-container .prestation-cards .prestation-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 0;
+      gap: 0.65rem;
+      margin: 0;
+    }
+
+    .prestation-container .prestation-cards .prestation-card > img {
+      display: block;
+      width: min(100%, clamp(5.5rem, 10.3vw, 8.5rem));
+      aspect-ratio: 1;
+      object-fit: cover;
+      object-position: center;
+      border: 2px solid c.$accent;
+      border-radius: 50%;
+    }
+
+    .prestation-container .prestation-cards .prestation-card .prestation-card-text {
+      width: 100%;
+      min-height: 3.15rem;
+      padding: 0.38rem 0.4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.12rem;
+      border-radius: 0.35rem;
+      background: c.$accent;
+      text-align: center;
+    }
+
+    .prestation-container .prestation-cards .prestation-card .prestation-card-text .prestation-card-title {
+      margin: 0;
+      color: #fff;
+      font-size: clamp(0.69rem, 0.85vw, 0.84rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      line-height: 1.25;
+    }
+
+    .prestation-container .prestation-cards .prestation-card .prestation-card-text .prestation-card-caption {
+      margin: 0;
+      color: #cbd9ff;
+      font-size: clamp(0.57rem, 0.65vw, 0.7rem);
+      line-height: 1.25;
+    }
+
+    .prestation-container .prestation-info {
+      align-items: center;
+      gap: 0.95rem 1.4rem;
+      width: min(100%, 39rem);
+      margin-top: clamp(1.5rem, 3.4vw, 3rem);
+      padding-top: 1rem;
+      border-top: 1px solid #1942a2;
+    }
+
+    .prestation-container .prestation-info p {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin: 0;
+      color: c.$color;
+      font-size: clamp(0.76rem, 0.88vw, 0.9rem);
+      line-height: 1.4;
+      white-space: nowrap;
+    }
+
+    .prestation-container .prestation-info p + p {
+      padding-left: 1.2rem;
+      border-left: 1px solid c.$accent;
+    }
+
+    .prestation-container .prestation-info p svg {
+      display: block;
+      flex: 0 0 1.7rem;
+      width: 1.7rem;
+      height: 1.7rem;
+      fill: none;
+      stroke: c.$color;
+      stroke-width: 1.6;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+  }
+}

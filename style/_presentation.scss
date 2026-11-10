@@ -1,16 +1,363 @@
-@use "variables" as c;
-@use "breakpoint" as bp;
+// _presentation.scss
+// Présentation de l’activité et encadré « Pourquoi La Yaute ».
+// Mobile : réorganisation par Grid. Laptop : contenu superposé à la photo fondue.
+// L’effet de papier déchiré est partagé entre les deux dispositions.
 
-/* ==============================
-   COMMUN
-================================= */
+@use 'variables' as c;
 
+@use 'breakpoint' as bp;
 
-/* ==============================
-   MOBILE
-================================= */
+// Commun au mobile et au laptop.
 
+#presentation {
+  display: grid;
 
-/* ==============================
-   LAPTOP
-================================= */
+  .presentation-explication {
+    display: flex;
+    background: c.$paper;
+    color: c.$paper-text;
+    // Découpe les bords du fond clair pour simuler du papier déchiré.
+    clip-path: polygon(0% 2%, 3% 1%, 5% 3%, 8% 1%, 12% 2%, 15% 0%, 19% 2%, 23% 1%, 27% 3%, 31% 1%, 35% 2%, 40% 0%, 45% 2%, 50% 1%, 55% 3%, 60% 1%, 65% 2%, 70% 0%, 75% 2%, 80% 1%, 85% 3%, 90% 1%, 95% 2%, 100% 1%, 100% 98%, 97% 100%, 93% 97%, 89% 99%, 85% 97%, 81% 100%, 76% 98%, 72% 100%, 68% 97%, 63% 99%, 58% 97%, 54% 100%, 49% 98%, 44% 100%, 39% 97%, 34% 99%, 29% 97%, 24% 100%, 19% 98%, 14% 100%, 9% 97%, 5% 99%, 0% 98%);
+  }
+
+  .presentation-explication .explication-content {
+    min-width: 0;
+  }
+
+  .presentation-explication .icon-content {
+    color: c.$illustration;
+  }
+
+  .presentation-explication .icon-content svg {
+    width: 100%;
+    height: auto;
+  }
+
+  .presentation-explication .icon-content .forest {
+    color: c.$forest;
+  }
+}
+
+// Mobile : jusqu’à 767 px.
+
+@include bp.mobile {
+  #presentation {
+    .presentation-container,
+    .presentation-content {
+      // Expose les enfants à la grille du parent sans changer le HTML.
+      display: contents;
+    }
+
+    .title-section {
+      order: 0;
+    }
+
+    h1 {
+      order: 1;
+      margin-bottom: 22px;
+    }
+
+    .subtitle-section,
+    .cards-content {
+      display: none;
+    }
+
+    .presentation-content > p:not(.title-section) {
+      order: 2;
+      margin-bottom: 18px;
+    }
+
+    .presentation-image {
+      order: 3;
+      margin: 18px 0 20px;
+    }
+
+    .presentation-image img {
+      width: 100%;
+      aspect-ratio: 1.76;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .presentation-explication {
+      order: 4;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 24px;
+    }
+
+    .presentation-explication .icon-content {
+      width: 9rem;
+      max-width: 60%;
+    }
+
+    .presentation-explication h3 {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 14px;
+      line-height: 1.3;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .presentation-explication h3::after {
+      content: "";
+      width: 40px;
+      height: 2px;
+      background: c.$accent;
+    }
+
+    .presentation-explication p {
+      margin-top: 13px;
+      color: c.$paper-paragraph;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+  }
+}
+
+// Laptop : à partir de 768 px.
+
+@include bp.laptop {
+  #presentation {
+    position: relative;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: stretch;
+    // Garde les calques de cette section dans leur propre contexte de superposition.
+    isolation: isolate;
+    overflow: hidden;
+    width: 100%;
+    min-height: clamp(44rem, 88dvh, 62rem);
+    background: c.$background;
+
+    .presentation-image {
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 67%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .presentation-image > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+
+    .presentation-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      // Fond la photo dans le fond sombre pour préserver la lisibilité du texte.
+      background: linear-gradient(to right, rgba(2, 8, 23, 0) 28%, rgba(2, 8, 23, 0.16) 55%, rgba(2, 8, 23, 0.84) 86%, c.$background 100%), linear-gradient(to top, rgba(2, 8, 23, 0.46) 0%, rgba(2, 8, 23, 0) 28%, rgba(2, 8, 23, 0) 75%, rgba(2, 8, 23, 0.2) 100%);
+    }
+
+    .presentation-container {
+      position: relative;
+      z-index: 1;
+      grid-column: 2;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+      gap: clamp(1.5rem, 3vw, 2.6rem);
+      padding: clamp(2rem, 3.5vw, 4rem) clamp(1.5rem, 3vw, 3.5rem);
+    }
+
+    .presentation-container .presentation-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: clamp(0.85rem, 1.4vw, 1.2rem);
+      min-width: 0;
+    }
+
+    .presentation-container .presentation-content .title-section {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      width: fit-content;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+    }
+
+    .presentation-container .presentation-content .title-section::before {
+      content: "";
+      flex: 0 0 0.28rem;
+      width: 0.28rem;
+      height: 0.28rem;
+      border-radius: 50%;
+      background: c.$accent;
+    }
+
+    .presentation-container .presentation-content .title-section::after {
+      content: "";
+      flex: 0 0 4rem;
+      height: 0.11rem;
+      background: c.$accent;
+    }
+
+    .presentation-container .presentation-content h1 {
+      margin-top: clamp(0.4rem, 1vw, 0.8rem);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.15rem, 5.2vw, 5.8rem);
+      font-weight: 700;
+      line-height: 0.99;
+      letter-spacing: -0.052em;
+      color: c.$color;
+    }
+
+    .presentation-container .presentation-content h1 .accent {
+      display: block;
+    }
+
+    .presentation-container .presentation-content .subtitle-section {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 0.25rem;
+      font-size: clamp(0.67rem, 0.75vw, 0.83rem);
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      line-height: 1.6;
+    }
+
+    .presentation-container .presentation-content .subtitle-section::after {
+      content: "";
+      flex: 0 0 2.8rem;
+      height: 0.11rem;
+      background: c.$accent;
+    }
+
+    .presentation-container .presentation-content > p:not(.title-section) {
+      max-width: 52ch;
+      font-size: clamp(0.9rem, 1vw, 1rem);
+      line-height: 1.7;
+      color: c.$color;
+    }
+
+    .presentation-container .presentation-content > p:not(.title-section) + p {
+      margin-top: clamp(0.4rem, 1.5vw, 1rem);
+    }
+
+    .presentation-container .presentation-content .cards-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-self: flex-start;
+      gap: 0.65rem;
+      width: fit-content;
+      max-width: 100%;
+      margin-top: clamp(0.55rem, 1.4vw, 1rem);
+      padding-top: 0.55rem;
+      border-top: 0.125rem solid c.$border;
+    }
+
+    .presentation-container .presentation-content .cards-content .card-presentation {
+      display: flex;
+      flex: 0 0 auto;
+      align-items: center;
+      gap: 0.5rem;
+      width: fit-content;
+      padding: 0.34rem;
+      border: 0.125rem solid c.$border;
+      border-radius: 0.5rem;
+      background: rgba(9, 20, 42, 0.57);
+    }
+
+    .presentation-container .presentation-content .cards-content .card-presentation .image-content {
+      flex: 0 0 3.4rem;
+      width: 3.4rem;
+      height: 4.45rem;
+    }
+
+    .presentation-container .presentation-content .cards-content .card-presentation .image-content img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 0.3rem;
+    }
+
+    .presentation-container .presentation-content .cards-content .card-presentation .text-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .presentation-container .presentation-content .cards-content .card-presentation .text-card p {
+      font-size: 0.69rem;
+      white-space: nowrap;
+    }
+
+    .presentation-container .presentation-content .cards-content .card-presentation .text-card .title-card {
+      font-weight: 700;
+    }
+
+    .presentation-container .presentation-content .cards-content .card-presentation .text-card .subtitle-card::first-letter {
+      text-transform: uppercase;
+    }
+
+    .presentation-container .presentation-explication {
+      // Distance de débordement de l’encadré papier vers la photo.
+      --paper-overlap: clamp(2.5rem, 9vw, 9rem);
+      position: relative;
+      align-items: center;
+      align-self: flex-start;
+      gap: clamp(0.65rem, 1.5vw, 1.2rem);
+      width: calc(100% + var(--paper-overlap));
+      max-width: none;
+      margin-left: calc(-1 * var(--paper-overlap));
+      padding: clamp(1rem, 2vw, 1.55rem);
+    }
+
+    .presentation-container .presentation-explication .icon-content {
+      display: block;
+      flex: 0 0 32%;
+      max-width: 11rem;
+      min-width: 5rem;
+    }
+
+    .presentation-container .presentation-explication .icon-content svg {
+      display: block;
+    }
+
+    .presentation-container .presentation-explication .explication-content {
+      flex: 1 1 auto;
+    }
+
+    .presentation-container .presentation-explication .explication-content h3 {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      font-size: clamp(0.85rem, 1.1vw, 1.15rem);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      line-height: 1.3;
+    }
+
+    .presentation-container .presentation-explication .explication-content h3::after {
+      content: "";
+      width: 2.5rem;
+      height: 0.125rem;
+      background: c.$accent;
+    }
+
+    .presentation-container .presentation-explication .explication-content p {
+      margin-top: 0.8rem;
+      color: c.$paper-paragraph;
+      font-size: clamp(0.8rem, 0.95vw, 0.95rem);
+      line-height: 1.6;
+    }
+  }
+}

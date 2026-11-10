@@ -1,182 +1,202 @@
-@use "variables" as c;
-@use "breakpoint" as bp;
+// _footer.scss
+// Pied de page : coordonnées, mentions légales et copyright.
+// Contacts empilés sur mobile, horizontaux sur laptop.
+// Le maintien hors du défilement principal sur laptop vient de _general.scss.
 
-/* ==============================
-   COMMUN
-================================= */
+@use 'variables' as c;
+
+@use 'breakpoint' as bp;
+
+// Commun au mobile et au laptop.
 
 footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: .2rem solid #263851;
-  border-radius: .5rem;
-
   h3 {
-    position: relative;
-    padding: .5rem;
     text-transform: uppercase;
-    letter-spacing: .2rem;
+  }
 
-    &::before {
-      content: '';
+  .contact a {
+    display: flex;
+    align-items: center;
+  }
+
+  // Regroupe le copyright et les liens vers les pages légales.
+  .footer-bottom {
+    display: flex;
+  }
+}
+
+// Mobile : jusqu’à 767 px.
+
+@include bp.mobile {
+  footer {
+    margin: 24px 24px 0;
+    padding: 28px 0 24px;
+    border-top: 2px solid c.$accent;
+
+    h3 {
+      margin-bottom: 24px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+    }
+
+    h3::after {
+      content: "";
+      display: block;
+      width: 46px;
+      height: 2px;
+      margin-top: 14px;
+      background: c.$accent;
+    }
+
+    .contact {
+      display: grid;
+      gap: 12px;
+      font-style: normal;
+    }
+
+    .contact a {
+      gap: 14px;
+      min-height: 44px;
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    .contact .icon-content {
+      flex-shrink: 0;
+      width: 34px;
+      height: 34px;
+      padding: 8px;
+      border: 1px solid c.$border;
+      border-radius: 50%;
+    }
+
+    .contact .icon-content svg {
+      width: 100%;
+      height: 100%;
+      fill: c.$accent;
+    }
+
+    // Regroupe le copyright et les liens vers les pages légales.
+    .footer-bottom {
+      flex-direction: column-reverse;
+      gap: 36px;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid c.$border;
+      font-size: 11px;
+    }
+
+    .legal-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+    }
+  }
+}
+
+// Laptop : à partir de 768 px.
+
+@include bp.laptop {
+  footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 0.2rem solid c.$border;
+    border-radius: 0.5rem;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    margin-top: 0.5rem;
+
+    h3 {
+      position: relative;
+      padding: 0.25rem 0.5rem;
+      letter-spacing: 0.2rem;
+      font-size: 1rem;
+    }
+
+    h3::before {
+      content: "";
       position: absolute;
       bottom: 0;
       left: 1rem;
       width: 5rem;
-      height: .2rem;
+      height: 0.2rem;
       background: c.$accent;
     }
-  }
-
-  .contact {
-    display: flex;
-
-    a {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: .5rem;
-
-      .icon-content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        svg {
-          fill: c.$accent;
-        }
-      }
-    }
-  }
-
-  .footer-bottom {
-    display: flex;
-    border-top: .2rem solid #263851;
-
-    .legal-links {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-
-      a {
-        text-decoration: underline;
-      }
-    }
-  }
-}
-
-/* ==============================
-   MOBILE
-================================= */
-
-@include bp.mobile {
-  footer {
-    gap: .5rem;
-    padding: .5rem;
 
     .contact {
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 1rem;
-
-      a {
-        .icon-content {
-          width: 2.5rem;
-          height: 2.5rem;
-          padding: .4rem;
-          border: .2rem solid #263851;
-          border-radius: 100%;
-
-          &.instagram {
-            padding: .2rem;
-          }
-
-          svg {
-            width: 100%;
-            height: 100%;
-          }
-        }
-      }
-    }
-
-    .footer-bottom {
-      flex-direction: column-reverse;
-      padding: .5rem;
-      gap: .8rem;
-    }
-  }
-}
-
-/* ==============================
-   LAPTOP
-================================= */
-
-@include bp.laptop {
-  footer {
-    gap: 1rem;
-    padding: 1rem;
-    margin-top: .5rem;
-    h3 {
-      font-size: 1.2rem;
-    }
-
-    .contact {
+      display: flex;
       flex-direction: row;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: space-around;
-
-      a {
-        position: relative;
-        padding: .5rem;
-
-        &::before {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          height: .2rem;
-          z-index: -1;
-          border-radius: 2px;
-          background: c.$accent;
-          transition: height ease .3s;
-        }
-
-        &:hover {
-          &::before {
-            height: 100%;
-          }
-
-          .icon-content {
-            svg {
-              fill: c.$color;
-            }
-          }
-        }
-
-        .icon-content {
-          width: 1.5rem;
-          height: 2rem;
-
-          svg {
-            transition: all ease .3s;
-          }
-        }
-      }
     }
 
+    .contact a {
+      flex-direction: row;
+      gap: 0.5rem;
+      position: relative;
+      padding: 0.5rem;
+    }
+
+    // Fond décoratif du lien, agrandi au survol sans changer ses dimensions.
+    .contact a::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0.2rem;
+      z-index: -1;
+      border-radius: 2px;
+      background: c.$accent;
+      transition: height ease 0.3s;
+    }
+
+    .contact a:hover::before {
+      height: 100%;
+    }
+
+    .contact a:hover .icon-content svg {
+      fill: c.$color;
+    }
+
+    .contact a .icon-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 1.5rem;
+      height: 2rem;
+    }
+
+    .contact a .icon-content svg {
+      fill: c.$accent;
+      transition: all ease 0.3s;
+    }
+
+    // Regroupe le copyright et les liens vers les pages légales.
     .footer-bottom {
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      height: 3rem;
-      gap: .5rem;
+      min-height: 2.25rem;
+      padding-top: 0.35rem;
+      gap: 0.5rem;
+      border-top: 0.2rem solid c.$border;
+    }
 
-      .legal-links {
-        gap: 2rem;
-      }
+    .footer-bottom .legal-links {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .footer-bottom .legal-links a {
+      text-decoration: underline;
     }
   }
 }

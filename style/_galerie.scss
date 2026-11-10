@@ -1,16 +1,21 @@
-@use "variables" as c;
-@use "breakpoint" as bp;
+// _galerie.scss
+// Galerie volontairement masquée dans la version actuelle.
+// Son lien est aussi masqué dans la navigation mobile et tablette.
 
-/* ==============================
-   COMMUN
-================================= */
+@use 'variables' as c;
 
+@use 'breakpoint' as bp;
 
-/* ==============================
-   MOBILE
-================================= */
+// Commun au mobile et au laptop.
 
+#galerie {
+  display: none;
+}
 
-/* ==============================
-   LAPTOP
-================================= */
+// Même navigation repliée sur mobile et tablette.
+
+@include bp.navigation-mobile {
+  header .navbar-link[href="#galerie"] {
+    display: none;
+  }
+}

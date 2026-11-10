@@ -1,72 +1,18 @@
-﻿@use "reset";
-@use "variables" as c;
-@use "breakpoint" as bp;
+// style.scss
+// Point d’entrée principal : compiler vers style.css, chargé par index.html.
+// Ordre : reset, structure générale, sections, puis fonds optionnels.
+// Les fichiers préfixés par _ sont des modules, pas des feuilles à charger dans le HTML.
+
+@use 'reset';
+@use 'general';
+@use 'header';
 @use 'banner';
-@use 'confidentialiter';
-@use 'galerie';
-@use 'intervention';
-@use 'mentions-legales';
 @use 'presentation';
 @use 'prestation';
 @use 'propos';
+@use 'intervention';
+@use 'galerie';
 @use 'footer';
-@use 'header';
-
-body{
-  display: flex;
-  flex-direction: column;
-  min-height: 100dvh;
-  background: c.$background;
-  color: c.$color;
-  font-size: 15px;
-  line-height: 1.55;
-  padding: .5rem;
-  overflow: hidden;
-}
-
-header{
-  flex-shrink: 0;
-}
-
-
-main{
-  flex: 1;
-  min-height: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow-y: auto;
-
-  section{
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-  }
-}
-
-footer{
-  flex-shrink: 0;
-}
-
-
-.uppercase{
-  text-transform: uppercase;
-}
-
-.accent{
-    color: c.$accent;
-}
-
-img{
-  max-width: 100%;
-}
-
-a:focus-visible, button:focus-visible{
-  outline: 3px solid white;
-  outline-offset: 5px;
-}
-
-//del after dev style all
-#banner{
-  display: none;
-}
+@use 'mentions-legales';
+@use 'confidentialiter';
+@use 'background';

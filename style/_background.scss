@@ -1,0 +1,72 @@
+// _background.scss
+// Option de fond uni ou dégradé, chargée après les styles des sections.
+// script/background-toggle.js pose data-background sur html et mémorise le choix localement.
+// Sans data-background="gradient", les fonds unis existants restent actifs.
+// Les règles du bouton réservent sa place dans la navbar.
+
+@use 'variables' as c;
+@use 'breakpoint' as bp;
+
+// Les fonds unis existants restent la référence. Seule cette option les habille.
+html[data-background='gradient'] {
+  body,
+  main > :is(#banner, #presentation, #prestation, #a_propos, #zone_intervention, #galerie) {
+    background-image:
+      radial-gradient(ellipse at 100% 0%, rgba(c.$accent, .2), transparent 65%),
+      linear-gradient(135deg, c.$background, #101c38);
+  }
+
+  header,
+  footer {
+    background-image: linear-gradient(110deg, c.$background, #132449);
+  }
+}
+
+header .background-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border: 1px solid c.$border;
+  border-radius: 9px;
+  background: c.$card-background;
+
+  // Pastille indiquant le fond disponible en cliquant sur le bouton.
+  .background-swatch {
+    width: 22px;
+    height: 22px;
+    border: 1px solid c.$color;
+    border-radius: 50%;
+    background: linear-gradient(135deg, c.$background 20%, c.$accent);
+  }
+
+  // État dégradé actif : la pastille propose le retour au fond uni.
+  &[aria-pressed='true'] {
+    border-color: c.$accent;
+    // Pastille indiquant le fond disponible en cliquant sur le bouton.
+    .background-swatch { background: c.$background; }
+  }
+}
+
+@include bp.navigation-mobile {
+  html[data-background='gradient'] header #menu {
+    background-image: linear-gradient(110deg, c.$background, #132449);
+  }
+
+  header {
+    gap: 12px;
+    .background-toggle { order: 1; margin-left: auto; }
+    .menu-toggle { order: 2; }
+  }
+}
+
+@include bp.navigation-laptop {
+  header {
+    gap: clamp(.5rem, 1vw, 1rem);
+    #menu { order: 1; }
+    .background-toggle { order: 2; }
+  }
+}

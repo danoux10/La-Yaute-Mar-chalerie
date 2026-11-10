@@ -1,77 +1,122 @@
-@use "variables" as c;
-@use "breakpoint" as bp;
+// _banner.scss
+// Bandeau : logo, activité, trois valeurs et photographie en noir et blanc.
+// Mobile : éléments empilés. Laptop : contenu et photo côte à côte.
 
-/* ==============================
-   COMMUN
-================================= */
+@use 'variables' as c;
+
+@use 'breakpoint' as bp;
+
+// Commun au mobile et au laptop.
 
 #banner {
+  .banner-eyebrow,
+  .banner-title,
+  .banner-location,
+  .banner-cta {
+    display: none;
+  }
+
   .banner-content {
-    .logo-and-title {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+    min-width: 0;
+  }
 
-    .values {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
+  .logo-and-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-      li {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: .5rem;
-        letter-spacing: .1rem;
-      }
+  .values {
+    display: flex;
+  }
 
-      .icon-content {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
+  .values li {
+    display: flex;
+    align-items: center;
+  }
+
+  .values .icon-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .banner-image {
+    overflow: hidden;
+  }
+
+  .banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right 10%;
+    // Traitement noir et blanc de la photo du bandeau.
+    filter: grayscale(100%) contrast(1.2) brightness(0.8);
   }
 }
 
-/* ==============================
-   MOBILE
-================================= */
+// Mobile : jusqu’à 767 px.
 
 @include bp.mobile {
   #banner {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-block: 40px;
+
     .banner-content {
-      .logo-and-title {
-        h2 {
-          font-size: .7rem;
-        }
-      }
+      width: 100%;
+    }
 
-      .values {
-        align-items: center;
-        margin-top: .2rem;
+    .logo-and-title {
+      gap: 20px;
+    }
 
-        li {
-          font-size: .5rem;
-        }
+    .logo-and-title .banner-logo {
+      width: min(75%, 17rem);
+    }
 
-        .icon-content {
-          width: 1.5rem;
-          height: 1.5rem;
-        }
-      }
+    .logo-and-title h2.uppercase {
+      font: 700 15px/1.5 sans-serif;
+      letter-spacing: 0.06em;
+      text-align: center;
+    }
+
+    .values {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+      width: fit-content;
+      max-width: 100%;
+      margin: 28px auto 0;
+    }
+
+    .values li {
+      gap: 12px;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+    }
+
+    .values .icon-content {
+      flex: 0 0 30px;
+      width: 30px;
+      height: 30px;
+    }
+
+    .values .icon-content svg {
+      width: 100%;
+      height: 100%;
     }
 
     .banner-image {
-      display: none;
+      width: 100%;
+      aspect-ratio: 4/3;
+      border-radius: 3rem;
     }
   }
 }
 
-/* ==============================
-   LAPTOP
-================================= */
+// Laptop : à partir de 768 px.
 
 @include bp.laptop {
   #banner {
@@ -86,47 +131,47 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      min-width: 0;
+    }
 
-      .logo-and-title {
-        .banner-logo {
-          width: 50%;
-        }
+    .banner-content .logo-and-title .banner-logo {
+      width: 50%;
+    }
 
-        h2 {
-          padding: .5rem 0;
-          text-align: center;
-          font-size: 1.5rem;
-        }
-      }
+    .banner-content .logo-and-title h2 {
+      padding: 0.5rem 0;
+      text-align: center;
+      font-size: 1.5rem;
+    }
 
-      .values {
-        padding: .5rem 0;
+    .banner-content .values {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: space-around;
+      padding: 0.5rem 0;
+    }
 
-        .icon-content {
-          width: 2rem;
-          height: 2rem;
-        }
-      }
+    .banner-content .values li {
+      flex-direction: row;
+      gap: 0.5rem;
+      letter-spacing: 0.1rem;
+    }
+
+    .banner-content .values .icon-content {
+      width: 2rem;
+      height: 2rem;
     }
 
     .banner-image {
       position: relative;
       min-width: 0;
       width: 75%;
-      overflow: hidden;
       border-radius: 5rem;
+    }
 
-      img {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-
-        object-fit: cover;
-        object-position: right 10%;
-        filter: grayscale(100%) contrast(1.2) brightness(0.8);
-      }
+    .banner-image img {
+      position: absolute;
+      inset: 0;
     }
   }
 }

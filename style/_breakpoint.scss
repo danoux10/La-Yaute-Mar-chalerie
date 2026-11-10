@@ -1,9 +1,16 @@
+// _breakpoint.scss
+// Seuils responsive et mixins du projet.
+// Le contenu bascule à 768 px ; la navigation possède son propre seuil à 1024 px.
+// @content insère les règles du bloc @include dans la media query correspondante.
+// Si le seuil de navigation change, synchroniser le matchMedia de script/navbar-toggle.js.
+
 // ================================
 // BREAKPOINTS
 // ================================
 
 $mobile: 767px;
 $laptop: 768px;
+$navigation: 1024px;
 
 // ================================
 // MIXINS
@@ -19,6 +26,19 @@ $laptop: 768px;
 // 💻 LAPTOP (768px et plus)
 @mixin laptop {
   @media screen and (min-width: $laptop) {
+    @content;
+  }
+}
+
+// Navigation : menu replié sur mobile et tablette.
+@mixin navigation-mobile {
+  @media screen and (width < $navigation) {
+    @content;
+  }
+}
+
+@mixin navigation-laptop {
+  @media screen and (min-width: $navigation) {
     @content;
   }
 }

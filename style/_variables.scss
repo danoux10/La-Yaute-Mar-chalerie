@@ -1,3 +1,8 @@
+// _variables.scss
+// Palette et valeurs Sass partagées entre les sections.
+// Utilisation : @use "variables" as c, puis c.$accent, c.$background, etc.
+// Valeurs résolues à la compilation ; la bascule du fond est gérée dans _background.scss.
+
 $background : #000617;
 $color : #bec5d9;
 $accent : #0047ff;

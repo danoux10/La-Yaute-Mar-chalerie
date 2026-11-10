@@ -1,16 +1,329 @@
-@use "variables" as c;
-@use "breakpoint" as bp;
+// _intervention.scss
+// Zone d’intervention : texte, point de départ et cartes des départements.
+// La photo est dans le flux sur mobile et sert de fond partiel sur laptop.
 
-/* ==============================
-   COMMUN
-================================= */
+@use 'variables' as c;
 
+@use 'breakpoint' as bp;
 
-/* ==============================
-   MOBILE
-================================= */
+// Commun au mobile et au laptop.
 
+#zone_intervention {
+  .zone-image img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
 
-/* ==============================
-   LAPTOP
-================================= */
+// Mobile : jusqu’à 767 px.
+
+@include bp.mobile {
+  #zone_intervention {
+    display: grid;
+
+    .zone-content {
+      // Expose les enfants à la grille du parent sans changer le HTML.
+      display: contents;
+    }
+
+    .zone-eyebrow {
+      order: 0;
+    }
+
+    .zone-title {
+      order: 1;
+    }
+
+    .zone-description {
+      order: 2;
+      margin-top: 24px;
+    }
+
+    .zone-depart {
+      order: 3;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 38px 0 24px;
+      font-size: 10px;
+      letter-spacing: 0.13em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .zone-depart svg {
+      flex-shrink: 0;
+      width: 22px;
+      height: 26px;
+      fill: none;
+      stroke: c.$accent;
+      stroke-width: 2;
+    }
+
+    .zone-image {
+      order: 4;
+    }
+
+    .zone-image img {
+      aspect-ratio: 1.5;
+      object-position: center 43%;
+      border-radius: 10px;
+    }
+
+    // Grille des départements desservis.
+    .zone-cards {
+      order: 5;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .zone-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 9px;
+      padding: 14px 3px;
+      border: 1px solid c.$border;
+      border-radius: 8px;
+      background: c.$card-background;
+      text-align: center;
+    }
+
+    .zone-card .zone-card-icon {
+      width: 38px;
+      height: 38px;
+      padding: 7px;
+      border-radius: 50%;
+      background: c.$accent;
+    }
+
+    .zone-card svg {
+      width: 100%;
+      height: 100%;
+      fill: none;
+      stroke: white;
+      stroke-width: 1.8;
+    }
+
+    .zone-card .zone-card-title {
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .zone-card .zone-card-subtitle {
+      font-size: 8px;
+      text-transform: uppercase;
+    }
+
+    .zone-card .zone-card-line {
+      display: none;
+    }
+  }
+}
+
+// Laptop : à partir de 768 px.
+
+@include bp.laptop {
+  #zone_intervention {
+    position: relative;
+    // Garde les calques de cette section dans leur propre contexte de superposition.
+    isolation: isolate;
+    flex-shrink: 0;
+    width: 100%;
+    min-height: clamp(48rem, 71.1vw, 64rem);
+    overflow: hidden;
+    background: c.$background;
+
+    .zone-image {
+      position: absolute;
+      inset: 0 0 0 auto;
+      width: 50%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .zone-image img {
+      display: block;
+      height: 100%;
+      object-position: center top;
+    }
+
+    .zone-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      // Fond la photo dans le fond sombre pour préserver la lisibilité du texte.
+      background: linear-gradient(to right, c.$background 0%, rgba(0, 6, 23, 0.8) 15%, rgba(0, 6, 23, 0.5) 40%, rgba(0, 6, 23, 0.18) 75%, rgba(0, 6, 23, 0.08) 100%), linear-gradient(to top, c.$background 0%, rgba(0, 6, 23, 0.4) 18%, rgba(0, 6, 23, 0) 55%);
+    }
+
+    .zone-content {
+      position: relative;
+      z-index: 1;
+      width: 63%;
+      max-width: 62rem;
+      padding: clamp(3.5rem, 7.6vw, 6.85rem) clamp(1.5rem, 6.25vw, 5.625rem) 5rem;
+    }
+
+    .zone-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin: 0 0 clamp(2.5rem, 5vw, 4.5rem);
+      color: #f4f5fa;
+      font-size: clamp(0.7rem, 1.2vw, 1.05rem);
+      font-weight: 700;
+      letter-spacing: 0.23em;
+      text-transform: uppercase;
+    }
+
+    .zone-eyebrow::after {
+      content: "";
+      width: 6.25rem;
+      height: 0.125rem;
+      background: c.$accent;
+    }
+
+    .zone-title {
+      margin: 0 0 2.5rem;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3rem, 6.65vw, 6rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.045em;
+    }
+
+    .zone-title .accent {
+      display: block;
+    }
+
+    .zone-description {
+      position: relative;
+      max-width: 44ch;
+      width: 100%;
+      margin: 0;
+      padding: 2.5rem 0 0;
+      font-size: clamp(1rem, 1.65vw, 1.48rem);
+      line-height: 1.52;
+      font-weight: 400;
+    }
+
+    .zone-description::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3.5rem;
+      height: 0.19rem;
+      background: #0857ff;
+    }
+  }
+
+  .zone-depart {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+    gap: 0.8rem;
+    margin: clamp(3.7rem, 6.7vw, 6rem) 0 clamp(2.6rem, 4vw, 3.5rem);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(0.64rem, 0.85vw, 0.81rem);
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: #c3cad7;
+  }
+
+  .zone-depart svg {
+    display: block;
+    flex: 0 0 1.45rem;
+    width: 1.45rem;
+    height: 1.7rem;
+    fill: none;
+    stroke: #0857ff;
+    stroke-width: 1.8;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+  }
+
+  // Grille des départements desservis.
+  .zone-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: min(100%, 45.25rem);
+    gap: 1.1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .zone-cards .zone-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    min-height: clamp(9rem, 12vw, 10.8rem);
+    padding: 1rem 0.65rem;
+    border: 1px solid #33415e;
+    border-radius: 0.8rem;
+    background: rgba(15, 24, 41, 0.76);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .zone-cards .zone-card .zone-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 3.85rem;
+    height: 3.85rem;
+    margin-bottom: 0.9rem;
+    border-radius: 50%;
+    background: #0857ff;
+  }
+
+  .zone-cards .zone-card .zone-card-icon svg {
+    width: 80%;
+    height: 80%;
+    stroke: #fff;
+    stroke-width: 1.6;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    fill: none;
+  }
+
+  .zone-cards .zone-card .zone-card-title {
+    display: block;
+    margin: 0 0 0.4rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(0.75rem, 1.2vw, 1.12rem);
+    line-height: 1.2;
+    font-weight: 600;
+    white-space: nowrap;
+    color: #c6cfe0;
+  }
+
+  .zone-cards .zone-card .zone-card-subtitle {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(0.5rem, 0.73vw, 0.66rem);
+    line-height: 1.2;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: #c3cddd;
+  }
+
+  .zone-cards .zone-card .zone-card-line {
+    display: block;
+    width: 2.45rem;
+    height: 0.15rem;
+    margin-top: 0.85rem;
+    background: #0857ff;
+  }
+}
