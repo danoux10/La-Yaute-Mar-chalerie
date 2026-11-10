@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "defaultMode": "default",
+    "allow": [
+      "Bash(git status)",
+      "Bash(git status --short)",
+      "Bash(git diff --stat)",
+      "Bash(php -l index.php)",
+      "Bash(sass --version)"
+    ],
+    "ask": [
+      "Edit",
+      "Write",
+      "mcp__playwright__*",
+      "mcp__context7__*",
+      "mcp__github__*"
+    ],
+    "deny": [
+      "Bash(rm *)",
+      "Bash(rmdir *)",
+      "Bash(del *)",
+      "Bash(Remove-Item *)",
+      "Bash(git reset *)",
+      "Bash(git clean *)",
+      "Bash(git checkout -- *)",
+      "Bash(git restore *)",
+      "Bash(git push *)",
+      "Bash(git config --global *)",
+      "Bash(npm install -g *)",
+      "Bash(npm install --global *)",
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./**/.env)",
+      "Read(./**/.env.*)",
+      "Read(./**/*.pem)",
+      "Read(./**/*.key)",
+      "Read(~/.ssh/**)",
+      "Read(~/.aws/**)",
+      "Edit(./.env*)",
+      "Write(./.env*)"
+    ]
+  }
+}
