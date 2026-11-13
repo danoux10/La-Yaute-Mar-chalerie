@@ -1,0 +1,143 @@
+- generic [active] [ref=f7e1]:
+  - banner [ref=f7e2]:
+    - link [ref=f7e3] [cursor=pointer]:
+      - /url: "#banner"
+      - img "La Yaute Maréchalerie" [ref=f7e4]
+    - button "Fond dégradé" [ref=f7e5] [cursor=pointer]
+    - navigation "Navigation principale" [ref=f7e7]:
+      - link "accueil" [ref=f7e8] [cursor=pointer]:
+        - /url: "#banner"
+      - link "présentation" [ref=f7e13] [cursor=pointer]:
+        - /url: "#presentation"
+      - link "prestations" [ref=f7e18] [cursor=pointer]:
+        - /url: "#prestation"
+      - link "à propos" [ref=f7e30] [cursor=pointer]:
+        - /url: "#a_propos"
+      - link "zone d'intervention" [ref=f7e35] [cursor=pointer]:
+        - /url: "#zone_intervention"
+      - link "galerie" [ref=f7e40] [cursor=pointer]:
+        - /url: "#galerie"
+  - main [ref=f7e45]:
+    - generic [ref=f7e46]:
+      - generic [ref=f7e47]:
+        - generic [ref=f7e48]:
+          - img "La Yaute Maréchalerie" [ref=f7e50]
+          - heading "Parage de chevaux, ânes et mulets" [level=2] [ref=f7e51]
+        - list [ref=f7e52]:
+          - listitem [ref=f7e53]: Savoir-faire et expérience
+          - listitem [ref=f7e59]: Respect de l’animal
+          - listitem [ref=f7e70]: Intervention à domicile
+      - complementary [ref=f7e77]:
+        - img "Maréchalerie en action auprès d’un cheval" [ref=f7e78]
+    - region "La Yaute Maréchalerie" [ref=f7e79]:
+      - complementary [ref=f7e80]:
+        - img "Trois équidés en panorama" [ref=f7e81]
+      - generic [ref=f7e82]:
+        - article [ref=f7e83]:
+          - paragraph [ref=f7e84]: Présentation
+          - heading "La Yaute Maréchalerie" [level=1] [ref=f7e85]:
+            - text: La Yaute
+            - generic [ref=f7e86]: Maréchalerie
+          - heading "Le parage au service de leurs pas" [level=2] [ref=f7e87]
+          - paragraph [ref=f7e88]: Basée à Viuz-en-Sallaz, au cœur de la Haute-Savoie, La Yaute Maréchalerie est spécialisée dans le parage des chevaux, ânes et mulets.
+          - paragraph [ref=f7e89]: J’interviens en Haute-Savoie, en Savoie et dans l’Ain pour accompagner les propriétaires, avec une approche de proximité, calme et adaptée à chaque équidé.
+          - generic [ref=f7e90]:
+            - generic [ref=f7e93]:
+              - paragraph [ref=f7e94]: Chevaux
+              - paragraph [ref=f7e95]: parage
+            - generic [ref=f7e98]:
+              - paragraph [ref=f7e99]: Ânes
+              - paragraph [ref=f7e100]: parage
+            - generic [ref=f7e103]:
+              - paragraph [ref=f7e104]: Mulets
+              - paragraph [ref=f7e105]: parage
+        - article [ref=f7e106]:
+          - complementary [aria-hidden] [ref=f7e107]
+          - generic [ref=f7e123]:
+            - heading "Pourquoi « La Yaute » ?" [level=3] [ref=f7e124]
+            - paragraph [ref=f7e125]: « La Yaute » est un surnom affectueux donné à la Haute-Savoie. Ce nom reflète mon attachement à cette région, à ses montagnes et à ses valeurs de simplicité, d’authenticité et de proximité.
+    - region "Mes prestations" [ref=f7e126]:
+      - generic:
+        - img "Maréchale-ferrante en train de travailler sur un sabot"
+      - generic [ref=f7e127]:
+        - paragraph [ref=f7e128]: Prestations
+        - heading "Mes prestations" [level=2] [ref=f7e129]
+        - paragraph [ref=f7e130]: Le parage des équidés
+        - paragraph [ref=f7e131]: Je propose un service de parage soigné, adapté aux besoins de chaque équidé, avec une approche calme et respectueuse.
+        - paragraph [ref=f7e132]: Pour vos trois compagnons
+        - list "Équidés concernés par le parage" [ref=f7e133]:
+          - listitem [ref=f7e134]:
+            - img "Cheval dans un paysage alpin" [ref=f7e135]
+            - generic [ref=f7e136]:
+              - paragraph [ref=f7e137]: Chevaux
+              - paragraph [ref=f7e138]: Parage du cheval
+          - listitem [ref=f7e139]:
+            - img "Âne dans un paysage alpin" [ref=f7e140]
+            - generic [ref=f7e141]:
+              - paragraph [ref=f7e142]: Ânes
+              - paragraph [ref=f7e143]: Parage de l’âne
+          - listitem [ref=f7e144]:
+            - img "Mulet dans un paysage alpin" [ref=f7e145]
+            - generic [ref=f7e146]:
+              - paragraph [ref=f7e147]: Mulets
+              - paragraph [ref=f7e148]: Parage du mulet
+        - generic "Informations pratiques" [ref=f7e149]:
+          - paragraph [ref=f7e150]:
+            - generic [ref=f7e157]: "Tarif : sur devis"
+          - paragraph [ref=f7e158]:
+            - generic [ref=f7e162]: Déplacement compris dans le tarif
+    - region "Une passion au service des équidés" [ref=f7e163]:
+      - generic [ref=f7e164]:
+        - paragraph [ref=f7e165]: À propos
+        - heading "Une passion au service des équidés" [level=2] [ref=f7e166]:
+          - text: Une passion
+          - generic [ref=f7e167]: au service des équidés
+        - generic [ref=f7e168]:
+          - paragraph [ref=f7e169]: Je m’appelle Cindy Piccot Ladrey, maréchale-ferrante titulaire d’un CAP maréchal-ferrant, obtenu après quatre années de formation en apprentissage au lycée agricole de Contamine-sur-Arve.
+          - paragraph [ref=f7e170]: Sérieuse, calme et très motivée, je travaille de manière autonome et m’adapte à chaque situation. Mon objectif est de proposer un travail soigné, dans le respect de chaque animal et de ses besoins.
+          - paragraph [ref=f7e171]: À travers La Yaute Maréchalerie, je mets ma passion et mes compétences au service du bien-être des chevaux, ânes et mulets, en privilégiant une approche respectueuse et adaptée à chaque équidé.
+        - list "Qualifications et qualités" [ref=f7e172]:
+          - listitem [ref=f7e173]:
+            - paragraph [ref=f7e177]: Diplôméedu CAP
+          - listitem [ref=f7e178]:
+            - paragraph [ref=f7e181]: 4 ansd’expérience
+          - listitem [ref=f7e182]:
+            - paragraph [ref=f7e185]: Sérieuse, calmeet motivée
+      - generic [ref=f7e186]:
+        - img "Cindy Piccot Ladrey au travail auprès d’un équidé" [ref=f7e187]
+        - img "Portrait de Cindy Piccot Ladrey" [ref=f7e188]
+    - region "Au plus près de vos équidés" [ref=f7e189]:
+      - generic [ref=f7e190]:
+        - paragraph [ref=f7e191]: Zone d’intervention
+        - heading "Au plus près de vos équidés" [level=2] [ref=f7e192]:
+          - text: Au plus près
+          - generic [ref=f7e193]: de vos équidés
+        - paragraph [ref=f7e194]: J’interviens en Haute-Savoie, en Savoie et dans l’Ain pour assurer le parage de vos chevaux, ânes et mulets, avec un service de proximité adapté à chaque animal.
+        - paragraph [ref=f7e195]:
+          - generic [ref=f7e199]: Au départ de Viuz-en-Sallaz
+        - list "Départements d’intervention" [ref=f7e200]:
+          - listitem [ref=f7e201]:
+            - generic [ref=f7e206]: Haute-Savoie
+            - generic [ref=f7e207]: Département 74
+          - listitem [ref=f7e209]:
+            - generic [ref=f7e214]: Savoie
+            - generic [ref=f7e215]: Département 73
+          - listitem [ref=f7e217]:
+            - generic [ref=f7e222]: Ain
+            - generic [ref=f7e223]: Département 01
+  - contentinfo [ref=f7e225]:
+    - heading "Nous contacter" [level=3] [ref=f7e226]
+    - generic [ref=f7e227]:
+      - link "06 37 74 33 80" [ref=f7e228] [cursor=pointer]:
+        - /url: tel:+33637743380
+      - link "piccot.cindy@gmail.com" [ref=f7e232] [cursor=pointer]:
+        - /url: mailto:piccot.cindy@gmail.com
+      - link "la_yaute_marechalerie_74" [ref=f7e236] [cursor=pointer]:
+        - /url: https://www.instagram.com/la_yaute_marechalerie_74
+    - generic [ref=f7e240]:
+      - paragraph [ref=f7e241]: © 2026 La Yaute Maréchalerie · Tous droits réservés
+      - generic [ref=f7e242]:
+        - link "Mentions légales" [ref=f7e243] [cursor=pointer]:
+          - /url: pages/mentions-legales.html
+        - link "Politique de confidentialité" [ref=f7e244] [cursor=pointer]:
+          - /url: pages/confidentialiter.html
