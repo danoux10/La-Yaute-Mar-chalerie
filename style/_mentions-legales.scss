@@ -1,9 +1,63 @@
 // _mentions-legales.scss
 // Emplacement réservé aux styles des mentions légales.
-// Aucune règle spécifique actuellement ; conserver la séparation commun / mobile / laptop.
+// Mise en page partagée des deux documents légaux, sans effet sur l’accueil.
 
 @use "variables" as c;
 @use "breakpoint" as bp;
+
+.legal-page {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 60rem;
+  margin-inline: auto;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 5vw, 3rem);
+  overflow-wrap: anywhere;
+
+  h1 {
+    margin-block: 1.5rem;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: clamp(2.1rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.12;
+  }
+
+  section {
+    display: block;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid c.$border;
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+    font-size: clamp(1.3rem, 3vw, 1.65rem);
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: normal;
+  }
+
+  h3 {
+    margin-block: 1.5rem .75rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  p, ul {
+    margin-block: .85rem;
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+
+  ul {
+    padding-left: 1.4rem;
+    list-style: disc;
+  }
+
+  li + li { margin-top: .35rem; }
+  a { text-decoration: underline; text-underline-offset: .2em; }
+  a:hover { color: white; }
+  .legal-back { display: inline-block; padding-block: .6rem; }
+}
 
 /* ==============================
    COMMUN

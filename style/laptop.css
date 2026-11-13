@@ -1889,6 +1889,63 @@ footer .footer-bottom {
     text-decoration: underline;
   }
 }
+.legal-page {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 60rem;
+  margin-inline: auto;
+  padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 5vw, 3rem);
+  overflow-wrap: anywhere;
+}
+.legal-page h1 {
+  margin-block: 1.5rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.1rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.12;
+}
+.legal-page section {
+  display: block;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #263851;
+}
+.legal-page h2 {
+  margin-bottom: 1rem;
+  font-size: clamp(1.3rem, 3vw, 1.65rem);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: normal;
+}
+.legal-page h3 {
+  margin-block: 1.5rem 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+.legal-page p, .legal-page ul {
+  margin-block: 0.85rem;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.legal-page ul {
+  padding-left: 1.4rem;
+  list-style: disc;
+}
+.legal-page li + li {
+  margin-top: 0.35rem;
+}
+.legal-page a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+.legal-page a:hover {
+  color: white;
+}
+.legal-page .legal-back {
+  display: inline-block;
+  padding-block: 0.6rem;
+}
+
 /* ==============================
    COMMUN
 ================================= */
