@@ -1,17 +1,17 @@
 // _mentions-legales.scss
-// Emplacement réservé aux styles des mentions légales.
 // Mise en page partagée des deux documents légaux, sans effet sur l’accueil.
 
 @use "variables" as c;
 @use "breakpoint" as bp;
 
-.legal-page {
+main > .legal-page {
   flex-shrink: 0;
   width: 100%;
-  max-width: 60rem;
+  max-width: 58rem;
   margin-inline: auto;
   padding: clamp(2rem, 5vw, 4rem) clamp(1.5rem, 5vw, 3rem);
   overflow-wrap: anywhere;
+  color: #e2e7f2;
 
   h1 {
     margin-block: 1.5rem;
@@ -23,9 +23,13 @@
 
   section {
     display: block;
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid c.$border;
+    margin-top: 1.5rem;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    border: 1px solid c.$border;
+    border-radius: .75rem;
+    background: c.$card-background;
+
+    > :last-child { margin-bottom: 0; }
   }
 
   h2 {
@@ -34,6 +38,7 @@
     font-weight: 700;
     line-height: 1.35;
     letter-spacing: normal;
+    color: #f4f0ea;
   }
 
   h3 {
